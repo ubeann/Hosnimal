@@ -4,4 +4,15 @@
     <string name="onBoarding_title">Title</string>
     <string name="onBoarding_description">Description</string>
     <string name="onBoarding_btn_next">NEXT</string>
+    <string name="register_logo">Logo Hosminal</string>
+    <string name="register_tag_line">Selamat Datang di Hosnimal</string>
+    <string name="register_caption">Silahkan buat sebuah akun dan nikmati fitur-fitur aplikasi Hosnimal</string>
+    <string name="register_input_nationality_caption">Negara</string>
+    <string name="register_input_password_hint">Minimal 8 karakter</string>
+    <string name="register_btn_text">DAFTAR SEKARANG</string>
+    <string name="login_alternative_caption">Belum punya akun?</string>
+    <string name="login_alternative_btn">Daftar sekarang</string>
+    <string name="login_input_email_caption">Email</string>
+    <string name="login_tag_line">Masuk Sekarang</string>
+    <string name="login_caption">Silahkan masukkan data-data akun anda</string>
 </resources>

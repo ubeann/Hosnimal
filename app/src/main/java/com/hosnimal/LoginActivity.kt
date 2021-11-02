@@ -5,28 +5,28 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
-class RegisterActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
+        setContentView(R.layout.activity_login)
 
-        // Setting Button Register
-        val btnRegister:Button = findViewById(R.id.btn_register)
-        btnRegister.setOnClickListener {
+        // Setting Button Login
+        val btnLogin: Button = findViewById(R.id.btn_login)
+        btnLogin.setOnClickListener {
             val intent = Intent(
-                this@RegisterActivity,
+                this@LoginActivity,
                 MainActivity::class.java
             )
             startActivity(intent)
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
             finish()
         }
-        // Setting Button Login Alternative
-        val btnLogin:Button = findViewById(R.id.btn_alternative_login)
-        btnLogin.setOnClickListener {
+        // Setting Button Register Alternative
+        val btnRegister: Button = findViewById(R.id.btn_alternative_register)
+        btnRegister.setOnClickListener {
             val intent = Intent(
-                this@RegisterActivity,
-                LoginActivity::class.java
+                this@LoginActivity,
+                RegisterActivity::class.java
             )
             startActivity(intent)
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)

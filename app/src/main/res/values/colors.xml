@@ -13,6 +13,9 @@
     <color name="background">#FFF9FAFC</color>
     <color name="primary">#FF371721</color>
     <color name="secondary">#FF824F17</color>
+    <color name="badge">#33824F17</color>
+    <color name="inputBackground">#0D371721</color>
     <color name="textPrimary">#FF824F17</color>
     <color name="textSecondary">#FF371721</color>
+    <color name="textCaption">#A6371721</color>
 </resources>

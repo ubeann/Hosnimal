@@ -1,9 +1,317 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
     tools:context=".RegisterActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="32dp">
+        <LinearLayout
+            android:id="@+id/welcome_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_rounded"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/register_logo"
+                android:src="@drawable/logo_circle" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="@string/register_tag_line"
+                android:textAlignment="center"
+                android:textColor="@color/primary"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="@string/register_caption"
+                android:textAlignment="center"
+                android:textColor="@color/textCaption"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/full_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/welcome_card"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register_input_name_caption"
+                android:textColor="@color/textCaption"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins_semi_bold"/>
+
+            <EditText
+                android:id="@+id/input_full_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/register_input_name_hint"
+                android:inputType="text"
+                android:textSize="14sp"
+                android:textColor="@color/primary"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:padding="8dp"
+                android:background="@drawable/input_rounded"
+                android:importantForAutofill="no"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/full_name"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register_input_email_caption"
+                android:textColor="@color/textCaption"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins_semi_bold"/>
+
+            <EditText
+                android:id="@+id/input_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/register_input_email_hint"
+                android:inputType="textEmailAddress"
+                android:textSize="14sp"
+                android:textColor="@color/primary"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:padding="8dp"
+                android:background="@drawable/input_rounded"
+                android:importantForAutofill="no"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/email"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register_input_phone_caption"
+                android:textColor="@color/textCaption"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins_semi_bold"/>
+
+            <EditText
+                android:id="@+id/input_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/register_input_phone_hint"
+                android:inputType="phone"
+                android:textSize="14sp"
+                android:textColor="@color/primary"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:padding="8dp"
+                android:background="@drawable/input_rounded"
+                android:importantForAutofill="no"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/list_input1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phone"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:id="@+id/birthday"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginEnd="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register_input_birthday_caption"
+                    android:textColor="@color/textCaption"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins_semi_bold"/>
+
+                <EditText
+                    android:id="@+id/input_birthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/register_input_birthday_hint"
+                    android:inputType="date"
+                    android:textSize="14sp"
+                    android:textColor="@color/primary"
+                    android:fontFamily="@font/poppins_semi_bold"
+                    android:padding="8dp"
+                    android:background="@drawable/input_rounded"
+                    android:importantForAutofill="no"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/nationality"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register_input_nationality_caption"
+                    android:textColor="@color/textCaption"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins_semi_bold"/>
+
+                <EditText
+                    android:id="@+id/input_nationality"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/register_input_nationality_hint"
+                    android:inputType="text"
+                    android:textSize="14sp"
+                    android:textColor="@color/primary"
+                    android:fontFamily="@font/poppins_semi_bold"
+                    android:padding="8dp"
+                    android:background="@drawable/input_rounded"
+                    android:importantForAutofill="no"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/list_input1"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register_input_password_caption"
+                android:textColor="@color/textCaption"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins_semi_bold"/>
+
+            <EditText
+                android:id="@+id/input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/register_input_password_hint"
+                android:inputType="textPassword"
+                android:textSize="14sp"
+                android:textColor="@color/primary"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:padding="8dp"
+                android:background="@drawable/input_rounded"
+                android:importantForAutofill="no"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/agreement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:text="@string/register_agreement_caption"
+            android:textColor="@color/textCaption"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/btn_register"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/password"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_primary_rounded"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="@string/register_btn_text"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/alternative_login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/alternative_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register_alternative_caption"
+                android:textSize="12sp"
+                android:textColor="@color/textSecondary"
+                android:fontFamily="@font/poppins_semi_bold"/>
+
+            <Button
+                android:id="@+id/btn_alternative_login"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:text="@string/register_alternative_btn"
+                android:textSize="12sp"
+                android:textColor="@color/textPrimary"
+                android:fontFamily="@font/poppins_semi_bold"
+                style="@style/Widget.MaterialComponents.Button.TextButton"/>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

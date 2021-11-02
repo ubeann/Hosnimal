@@ -14,20 +14,18 @@ class OnBoardingActivity : AppCompatActivity() {
     private val adapter = com.hosnimal.OnBoardingAdapter(
         listOf(
             OnBoardingItem(
-                "Hewan",
-                "Use your mask anywhere and anytime you go out",
+                "Perawatan Hewan",
+                "Kami memberikan pelayanan, pemeriksaan serta pengobatan karena kesehatan dan keselamatan hewan anda\nmenjadi prioritas kami",
                 R.raw.on_boarding_1_animal
             ),
             OnBoardingItem(
-                "Toko Online",
-                "Always wash and sanitize your hand before \n" +
-                        "you do some activities",
+                "Farmasi",
+                "Kami menyediakan makanan, obat, alat kesehatan dan kebutuhan hewan lainnya yang dibutuhkan secara online",
                 R.raw.on_boarding_2_shopping
             ),
             OnBoardingItem(
-                "Konsultasi",
-                "Don’t forget to avoid close contact and \n" +
-                        "do the physical distancing ",
+                "Konsultasi Online",
+                "Kami menyediakan tenaga medis berpengalaman untuk membantu mengatasi permasalahan hewan anda secara real-time dengan chat secara langsung",
                 R.raw.on_boarding_3_consultation
             )
         )
@@ -73,7 +71,7 @@ class OnBoardingActivity : AppCompatActivity() {
             }else{
                 val intent = Intent(
                     this@OnBoardingActivity,
-                    MainActivity::class.java
+                    RegisterActivity::class.java
                 )
                 startActivity(intent)
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
