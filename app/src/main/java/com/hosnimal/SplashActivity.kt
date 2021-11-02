@@ -24,10 +24,10 @@ class SplashActivity : AppCompatActivity() {
                 } finally {
                     val intent = Intent(
                         this@SplashActivity,
-                        MainActivity::class.java
+                        OnBoardingActivity::class.java
                     )
                     startActivity(intent)
-                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
                     finish()
                 }
             }

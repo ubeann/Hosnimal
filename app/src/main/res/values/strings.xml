@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Hosnimal</string>
     <string name="splash_description">Logo Aplikasi</string>
+    <string name="onBoarding_title">Title</string>
+    <string name="onBoarding_description">Description</string>
+    <string name="onBoarding_btn_skip">LEWATI</string>
+    <string name="onBoarding_btn_next">BERIKUTNYA</string>
 </resources>
