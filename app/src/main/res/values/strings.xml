@@ -31,4 +31,10 @@
     <string name="login_input_password_caption">Password</string>
     <string name="login_tag_line">Masuk Sekarang</string>
     <string name="login_caption">Silahkan masukkan data-data akun anda</string>
+    <string name="navigation_bar_home">Beranda</string>
+    <string name="navigation_bar_maps">Map</string>
+    <string name="navigation_bar_notification">Notif</string>
+    <string name="navigation_bar_profile">Profil</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

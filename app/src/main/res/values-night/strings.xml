@@ -15,4 +15,8 @@
     <string name="login_input_email_caption">Email</string>
     <string name="login_tag_line">Masuk Sekarang</string>
     <string name="login_caption">Silahkan masukkan data-data akun anda</string>
+    <string name="navigation_bar_home">Beranda</string>
+    <string name="navigation_bar_maps">Map</string>
+    <string name="navigation_bar_notification">Notif</string>
+    <string name="navigation_bar_profile">Profil</string>
 </resources>

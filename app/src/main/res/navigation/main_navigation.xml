@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/home_fragment">
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.hosnimal.HomeFragment"
+        android:label="@string/navigation_bar_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_fragment_to_maps_fragment"
+            app:destination="@id/maps_fragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/maps_fragment"
+        android:name="com.hosnimal.MapFragment"
+        android:label="@string/navigation_bar_maps"
+        tools:layout="@layout/fragment_map">
+        <action
+            android:id="@+id/action_maps_fragment_to_profile_fragment"
+            app:destination="@id/profile_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.hosnimal.ProfileFragment"
+        android:label="@string/navigation_bar_profile"
+        tools:layout="@layout/fragment_profile"/>
+</navigation>
