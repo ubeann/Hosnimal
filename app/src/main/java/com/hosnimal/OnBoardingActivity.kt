@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.viewpager2.widget.ViewPager2
-import com.airbnb.lottie.LottieAnimationView
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
 
 class OnBoardingActivity : AppCompatActivity() {
