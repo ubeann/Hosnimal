@@ -1,52 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OnBoardingActivity"
-    android:paddingRight="32dp"
-    android:paddingLeft="32dp">
+    android:layout_marginStart="@dimen/medium_margin"
+    android:layout_marginEnd="@dimen/medium_margin">
 
-    <LinearLayout
-        android:id="@+id/list_content"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginEnd="@dimen/small_margin"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/on_boarding_1_animal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/animation"
-            android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            app:lottie_autoPlay="true"
-            app:lottie_rawRes="@raw/on_boarding_1_animal"/>
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/onBoarding_title"
+        android:textColor="@color/textPrimary"
+        android:textSize="@dimen/title_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/animation"
+        app:layout_constraintBottom_toTopOf="@+id/textDescription"/>
 
-        <TextView
-            android:id="@+id/textTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp"
-            android:fontFamily="@font/poppins_bold"
-            android:text="@string/onBoarding_title"
-            android:textColor="@color/textPrimary"
-            android:textSize="20sp" />
+    <TextView
+        android:id="@+id/textDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_margin"
+        android:layout_marginStart="@dimen/medium_margin"
+        android:layout_marginEnd="@dimen/medium_margin"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/onBoarding_description"
+        android:textAlignment="center"
+        android:textColor="@color/textSecondary"
+        android:textSize="@dimen/paragraph_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
-        <TextView
-            android:id="@+id/textDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_regular"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:text="@string/onBoarding_description"
-            android:textAlignment="center"
-            android:textColor="@color/textSecondary"
-            android:textSize="12sp" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

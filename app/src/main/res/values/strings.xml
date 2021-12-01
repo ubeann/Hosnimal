@@ -1,10 +1,24 @@
 <resources>
+    <!-- App -->
     <string name="app_name">Hosnimal</string>
+
+    <!-- Splash -->
     <string name="splash_description">Logo Aplikasi</string>
+
+    <!-- On Boarding -->
     <string name="onBoarding_title">Title</string>
     <string name="onBoarding_description">Description</string>
     <string name="onBoarding_btn_skip">LEWATI</string>
     <string name="onBoarding_btn_next">BERIKUTNYA</string>
+    <string name="onBoarding_btn_end">MUlAI SEKARANG</string>
+    <string name="onBoarding_1_title">Perawatan Hewan</string>
+    <string name="onBoarding_1_description">Kami memberikan pelayanan, pemeriksaan serta pengobatan karena kesehatan dan keselamatan hewan anda menjadi prioritas kami</string>
+    <string name="onBoarding_2_title">Farmasi</string>
+    <string name="onBoarding_2_description">Kami menyediakan makanan, obat, alat kesehatan dan kebutuhan hewan lainnya yang dibutuhkan secara online</string>
+    <string name="onBoarding_3_title">Konsultasi Online</string>
+    <string name="onBoarding_3_description">Kami menyediakan tenaga medis berpengalaman untuk membantu mengatasi permasalahan hewan anda secara real-time dengan chat secara langsung</string>
+
+
     <string name="register_logo">Logo Hosminal</string>
     <string name="register_tag_line">Selamat Datang di Hosnimal</string>
     <string name="register_caption">Silahkan buat sebuah akun dan nikmati fitur-fitur aplikasi Hosnimal</string>
@@ -35,8 +49,7 @@
     <string name="navigation_bar_maps">Map</string>
     <string name="navigation_bar_notification">Notif</string>
     <string name="navigation_bar_profile">Profil</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="fragment_profile_title">PROFIL</string>
     <string name="fragment_profile_name">Rara Kim</string>
     <string name="fragment_profile_joined">Bergabung pada tanggal\n3 November 2021</string>
@@ -45,7 +58,7 @@
     <string name="fragment_map_title">MAP</string>
     <string name="fragment_map_description_1">Foto Rumah sakit</string>
     <string name="fragment_map_detail_1_name">RS Universitas Airlangga</string>
-    <string name="fragment_map_detail_1_location">Jl. Airlangga No.4 - 6, Airlangga, Kec. Gubeng, SBY</string>
+    <string name="fragment_map_detail_1_location">Jl. Airlangga No.4 – 6, Airlangga, Kec. Gubeng, SBY</string>
     <string name="fragment_map_status_1">Buka</string>
     <string name="fragment_map_status_2">Tutup</string>
     <string name="fragment_map_detail_2_name">RS Bhayangkara Surabaya</string>
