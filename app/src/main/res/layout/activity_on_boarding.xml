@@ -35,9 +35,10 @@
             app:dotsWidthFactor="5"
             app:progressMode="true"
             app:selectedDotColor="@color/secondary"
+            app:layout_constraintTop_toBottomOf="@+id/list_content"
+            app:layout_constraintBottom_toTopOf="@+id/btn_end"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/btn_end" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <Button
             android:id="@+id/btn_skip"

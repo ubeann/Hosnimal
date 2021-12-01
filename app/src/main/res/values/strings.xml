@@ -15,9 +15,8 @@
     <string name="onBoarding_1_description">Kami memberikan pelayanan, pemeriksaan serta pengobatan karena kesehatan dan keselamatan hewan anda menjadi prioritas kami</string>
     <string name="onBoarding_2_title">Farmasi</string>
     <string name="onBoarding_2_description">Kami menyediakan makanan, obat, alat kesehatan dan kebutuhan hewan lainnya yang dibutuhkan secara online</string>
-    <string name="onBoarding_3_title">Konsultasi Online</string>
-    <string name="onBoarding_3_description">Kami menyediakan tenaga medis berpengalaman untuk membantu mengatasi permasalahan hewan anda secara real-time dengan chat secara langsung</string>
-
+    <string name="onBoarding_3_title">Reservasi Online</string>
+    <string name="onBoarding_3_description">Kami menyediakan layanan reservasi secara online dengan pemeriksaan bersama tenaga medis yang berpengalaman sehingga peliharaan anda dengan cepat ditangani tanpa menunggu antrian</string>
 
     <string name="register_logo">Logo Hosminal</string>
     <string name="register_tag_line">Selamat Datang di Hosnimal</string>
