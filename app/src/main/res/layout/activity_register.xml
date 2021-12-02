@@ -3,319 +3,203 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@color/background"
     android:fillViewport="true"
-    android:fitsSystemWindows="true"
-    tools:context=".RegisterActivity">
+    tools:context=".ui.register.RegisterActivity" >
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="32dp"
-        android:paddingLeft="32dp"
-        android:paddingBottom="12dp"
-        android:paddingRight="32dp">
-        <LinearLayout
+        android:layout_margin="@dimen/margin_medium" >
+
+        <include
             android:id="@+id/welcome_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/background_rounded"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:padding="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintEnd_toEndOf="parent"
+            layout="@layout/welcome_card" />
 
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:contentDescription="@string/register_logo"
-                android:src="@drawable/logo_circle" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="@font/poppins_bold"
-                android:text="@string/register_tag_line"
-                android:textAlignment="center"
-                android:textColor="@color/primary"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_semi_bold"
-                android:text="@string/register_caption"
-                android:textAlignment="center"
-                android:textColor="@color/textCaption"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-        <LinearLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/full_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/margin_small"
+            android:hint="@string/input_name"
+            app:startIconDrawable="@drawable/ic_round_person_24"
+            app:startIconContentDescription="@string/input_name"
+            app:endIconMode="clear_text"
             app:layout_constraintTop_toBottomOf="@+id/welcome_card"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/register_input_name_caption"
-                android:textColor="@color/textCaption"
-                android:textSize="12sp"
-                android:fontFamily="@font/poppins_semi_bold"/>
-
-            <EditText
-                android:id="@+id/input_full_name"
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/register_input_name_hint"
-                android:inputType="text"
-                android:textSize="14sp"
-                android:textColor="@color/primary"
-                android:fontFamily="@font/poppins_semi_bold"
-                android:padding="8dp"
-                android:background="@drawable/input_rounded"
-                android:importantForAutofill="no"/>
-        </LinearLayout>
+                android:fontFamily="@font/poppins_regular" />
 
-        <LinearLayout
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/margin_small"
+            android:hint="@string/input_email"
+            app:startIconDrawable="@drawable/ic_round_email_24"
+            app:startIconContentDescription="@string/input_email"
+            app:endIconMode="clear_text"
             app:layout_constraintTop_toBottomOf="@+id/full_name"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/register_input_email_caption"
-                android:textColor="@color/textCaption"
-                android:textSize="12sp"
-                android:fontFamily="@font/poppins_semi_bold"/>
-
-            <EditText
-                android:id="@+id/input_email"
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/register_input_email_hint"
                 android:inputType="textEmailAddress"
-                android:textSize="14sp"
-                android:textColor="@color/primary"
-                android:fontFamily="@font/poppins_semi_bold"
-                android:padding="8dp"
-                android:background="@drawable/input_rounded"
-                android:importantForAutofill="no"/>
-        </LinearLayout>
+                android:fontFamily="@font/poppins_regular" />
 
-        <LinearLayout
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/margin_small"
+            android:hint="@string/input_phone"
+            app:startIconDrawable="@drawable/ic_round_phone_24"
+            app:startIconContentDescription="@string/input_phone"
+            app:endIconMode="clear_text"
             app:layout_constraintTop_toBottomOf="@+id/email"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/register_input_phone_caption"
-                android:textColor="@color/textCaption"
-                android:textSize="12sp"
-                android:fontFamily="@font/poppins_semi_bold"/>
-
-            <EditText
-                android:id="@+id/input_phone"
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/register_input_phone_hint"
                 android:inputType="phone"
-                android:textSize="14sp"
-                android:textColor="@color/primary"
-                android:fontFamily="@font/poppins_semi_bold"
-                android:padding="8dp"
-                android:background="@drawable/input_rounded"
-                android:importantForAutofill="no"/>
-        </LinearLayout>
+                android:fontFamily="@font/poppins_regular" />
 
-        <LinearLayout
-            android:id="@+id/list_input1"
-            android:layout_width="match_parent"
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/birthday"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:hint="@string/input_birthday"
+            app:startIconDrawable="@drawable/ic_round_cake_24"
+            app:startIconContentDescription="@string/input_birthday"
             app:layout_constraintTop_toBottomOf="@+id/phone"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp"
-            android:baselineAligned="false">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_date_picker"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" >
 
-            <LinearLayout
-                android:id="@+id/birthday"
-                android:layout_width="0dp"
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_marginEnd="8dp">
+                android:textColor="@color/black"
+                android:enabled="false"
+                android:fontFamily="@font/poppins_regular" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/register_input_birthday_caption"
-                    android:textColor="@color/textCaption"
-                    android:textSize="12sp"
-                    android:fontFamily="@font/poppins_semi_bold"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-                <EditText
-                    android:id="@+id/input_birthday"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/register_input_birthday_hint"
-                    android:inputType="date"
-                    android:textSize="14sp"
-                    android:textColor="@color/primary"
-                    android:fontFamily="@font/poppins_semi_bold"
-                    android:padding="8dp"
-                    android:background="@drawable/input_rounded"
-                    android:importantForAutofill="no"/>
-            </LinearLayout>
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_date_picker"
+            android:layout_width="@dimen/button_icon"
+            android:layout_height="@dimen/button_icon"
+            android:layout_marginTop="@dimen/margin_tiny"
+            android:background="@drawable/btn_icon_rounded"
+            android:src="@drawable/ic_round_calendar_month_24"
+            app:layout_constraintTop_toTopOf="@+id/birthday"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-            <LinearLayout
-                android:id="@+id/nationality"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_marginStart="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/register_input_nationality_caption"
-                    android:textColor="@color/textCaption"
-                    android:textSize="12sp"
-                    android:fontFamily="@font/poppins_semi_bold"/>
-
-                <EditText
-                    android:id="@+id/input_nationality"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/register_input_nationality_hint"
-                    android:inputType="text"
-                    android:textSize="14sp"
-                    android:textColor="@color/primary"
-                    android:fontFamily="@font/poppins_semi_bold"
-                    android:padding="8dp"
-                    android:background="@drawable/input_rounded"
-                    android:importantForAutofill="no"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/margin_small"
+            android:hint="@string/input_password"
+            app:startIconDrawable="@drawable/ic_round_lock_24"
+            app:startIconContentDescription="@string/input_password"
+            app:endIconMode="password_toggle"
+            app:layout_constraintTop_toBottomOf="@+id/birthday"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/list_input1"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp">
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/register_input_password_caption"
-                android:textColor="@color/textCaption"
-                android:textSize="12sp"
-                android:fontFamily="@font/poppins_semi_bold"/>
-
-            <EditText
-                android:id="@+id/input_password"
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/register_input_password_hint"
                 android:inputType="textPassword"
-                android:textSize="14sp"
-                android:textColor="@color/primary"
-                android:fontFamily="@font/poppins_semi_bold"
-                android:padding="8dp"
-                android:background="@drawable/input_rounded"
-                android:importantForAutofill="no"/>
-        </LinearLayout>
+                android:fontFamily="@font/poppins_regular" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/agreement"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp"
+            android:layout_marginTop="@dimen/margin_medium"
             android:text="@string/register_agreement_caption"
             android:textColor="@color/textCaption"
-            android:textSize="12sp"
+            android:textSize="@dimen/text_paragraph"
             android:fontFamily="@font/poppins_semi_bold"
             android:textAlignment="center"
-            app:layout_constraintBottom_toTopOf="@+id/btn_register"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/password"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
             android:background="@drawable/btn_primary_rounded"
             android:fontFamily="@font/poppins_semi_bold"
             android:text="@string/register_btn_text"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/alternative_login"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <LinearLayout
-            android:id="@+id/alternative_login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/agreement"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="12dp">
+            app:layout_constraintEnd_toEndOf="parent" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/register_alternative_caption"
-                android:textSize="12sp"
-                android:textColor="@color/textSecondary"
-                android:fontFamily="@font/poppins_semi_bold"/>
+        <TextView
+            android:id="@+id/alternative_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/register_alternative_caption"
+            android:textSize="@dimen/text_paragraph"
+            android:textColor="@color/textSecondary"
+            android:fontFamily="@font/poppins_semi_bold"
+            app:layout_constraintTop_toBottomOf="@+id/btn_register"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_alternative_login"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_alternative_login"
+            app:layout_constraintHorizontal_chainStyle="packed" />
 
-            <Button
-                android:id="@+id/btn_alternative_login"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/register_alternative_btn"
-                android:textSize="12sp"
-                android:textColor="@color/textPrimary"
-                android:fontFamily="@font/poppins_semi_bold"
-                style="@style/Widget.MaterialComponents.Button.TextButton"/>
-        </LinearLayout>
+        <Button
+            android:id="@+id/btn_alternative_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginBottom="@dimen/margin_high"
+            android:text="@string/register_alternative_btn"
+            android:textSize="@dimen/text_paragraph"
+            android:textColor="@color/textPrimary"
+            android:fontFamily="@font/poppins_semi_bold"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            app:layout_constraintTop_toBottomOf="@+id/btn_register"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/alternative_text"
+            app:layout_constraintEnd_toEndOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>

@@ -14,7 +14,7 @@
             android:name=".LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".ui.register.RegisterActivity"
             android:exported="true" />
         <activity
             android:name=".ui.on_boarding.OnBoardingActivity"

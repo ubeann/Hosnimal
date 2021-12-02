@@ -6,7 +6,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.hosnimal.R
-import com.hosnimal.RegisterActivity
+import com.hosnimal.ui.register.RegisterActivity
 import com.hosnimal.databinding.ActivityOnBoardingBinding
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter

@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Margin Size -->
-    <dimen name="tiny_margin">4dp</dimen>
-    <dimen name="small_margin">8dp</dimen>
-    <dimen name="medium_margin">16dp</dimen>
-    <dimen name="high_margin">24dp</dimen>
-    <dimen name="ultra_margin">32dp</dimen>
+    <dimen name="margin_tiny">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_high">24dp</dimen>
+    <dimen name="margin_ultra">32dp</dimen>
+
+    <!-- Padding Size -->
+    <dimen name="padding_medium">16dp</dimen>
 
     <!-- Text Size -->
-    <dimen name="paragraph_text">12sp</dimen>
-    <dimen name="medium_text">16sp</dimen>
-    <dimen name="title_text">20sp</dimen>
+    <dimen name="text_paragraph">12sp</dimen>
+    <dimen name="text_sub_title">16sp</dimen>
+    <dimen name="text_title">20sp</dimen>
+
+    <!-- Icon Size -->
+    <dimen name="icon_big">48dp</dimen>
+
+    <!-- Radius Size -->
+    <dimen name="radius_tiny">8dp</dimen>
+    <dimen name="radius_big">38dp</dimen>
+
+    <!-- Button Size -->
+    <dimen name="button_icon">60dp</dimen>
 </resources>

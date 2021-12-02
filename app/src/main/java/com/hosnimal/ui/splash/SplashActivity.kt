@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.hosnimal.App
 import com.hosnimal.ui.on_boarding.OnBoardingActivity
 import com.hosnimal.R
-import com.hosnimal.RegisterActivity
+import com.hosnimal.ui.register.RegisterActivity
 import com.hosnimal.ui.on_boarding.OnBoardingPreferences
 import java.lang.Exception
 

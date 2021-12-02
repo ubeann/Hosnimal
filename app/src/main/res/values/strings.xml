@@ -18,25 +18,32 @@
     <string name="onBoarding_3_title">Reservasi Online</string>
     <string name="onBoarding_3_description">Kami menyediakan layanan reservasi secara online dengan pemeriksaan bersama tenaga medis yang berpengalaman sehingga peliharaan anda dengan cepat ditangani tanpa menunggu antrian</string>
 
+    <!-- Input -->
+    <string name="input_name">Nama Lengkap</string>
+    <string name="input_email">Alamat Email</string>
+    <string name="input_phone">Nomor HP</string>
+    <string name="input_birthday">Tanggal Lahir</string>
+    <string name="input_birthday_date_picker">Pilih Tanggal Lahir</string>
+    <string name="input_password">Kata Sandi</string>
+
+    <!-- Error -->
+    <string name="error_name">Silahkan masukkan nama lengkap anda</string>
+    <string name="error_email">Silahkan masukkan alamat email anda</string>
+    <string name="error_email_valid">Silahkan masukkan alamat email yang valid</string>
+    <string name="error_phone">Silahkan masukkan nomor HP anda</string>
+    <string name="error_birthday">Silahkan masukkan tanggal lahir anda</string>
+    <string name="error_password">Silahkan masukkan kata sandi anda</string>
+
+    <!-- Register -->
     <string name="register_logo">Logo Hosminal</string>
     <string name="register_tag_line">Selamat Datang di Hosnimal</string>
     <string name="register_caption">Silahkan buat sebuah akun dan nikmati fitur-fitur aplikasi Hosnimal</string>
-    <string name="register_input_name_caption">Nama Lengkap</string>
-    <string name="register_input_name_hint">Ex: Jaliiiku</string>
-    <string name="register_input_email_caption">Alamat Email</string>
-    <string name="register_input_email_hint">Ex: jaliku@gmail.com</string>
-    <string name="register_input_phone_caption">Nomor HP</string>
-    <string name="register_input_phone_hint">Ex: 0812345678</string>
-    <string name="register_input_birthday_caption">Tanggal Lahir</string>
-    <string name="register_input_birthday_hint">DD/MM/YYYY</string>
-    <string name="register_input_nationality_caption">Negara</string>
-    <string name="register_input_nationality_hint">Ex: Indonesia</string>
-    <string name="register_input_password_caption">Password</string>
-    <string name="register_input_password_hint">Minimal 8 karakter</string>
     <string name="register_btn_text">DAFTAR SEKARANG</string>
     <string name="register_alternative_caption">Sudah punya akun?</string>
     <string name="register_alternative_btn">Masuk</string>
     <string name="register_agreement_caption"><![CDATA[Dengan Membuat akun, Anda mengonfirmasi bahwa Anda menerima Ketentuan Penggunaan & Kebijakan Privasi kami]]></string>
+
+
     <string name="login_btn_text">Masuk</string>
     <string name="login_alternative_caption">Belum punya akun?</string>
     <string name="login_alternative_btn">Daftar sekarang</string>
@@ -79,4 +86,18 @@
     <string name="fragment_home_pharmacy_item_3_price">Rp 75.000</string>
     <string name="fragment_home_clinic">Klinik Terdekat</string>
     <string name="fragment_home_clinic_image">Foto Rumah Sakit</string>
+
+    <!-- Need to Delete -->
+    <string name="register_input_name_caption">Nama Lengkap</string>
+    <string name="register_input_name_hint">Ex: Jaliiiku</string>
+    <string name="register_input_email_caption">Alamat Email</string>
+    <string name="register_input_email_hint">Ex: jaliku@gmail.com</string>
+    <string name="register_input_phone_caption">Nomor HP</string>
+    <string name="register_input_phone_hint">Ex: 0812345678</string>
+    <string name="register_input_birthday_caption">Tanggal Lahir</string>
+    <string name="register_input_birthday_hint">DD/MM/YYYY</string>
+    <string name="register_input_nationality_caption">Negara</string>
+    <string name="register_input_nationality_hint">Ex: Indonesia</string>
+    <string name="register_input_password_caption">Password</string>
+    <string name="register_input_password_hint">Minimal 8 karakter</string>
 </resources>
