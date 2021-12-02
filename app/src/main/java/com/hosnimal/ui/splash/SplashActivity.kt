@@ -10,7 +10,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import com.hosnimal.App
-import com.hosnimal.MainActivity
+import com.hosnimal.ui.main.MainActivity
 import com.hosnimal.ui.on_boarding.OnBoardingActivity
 import com.hosnimal.R
 import com.hosnimal.ui.register.RegisterActivity

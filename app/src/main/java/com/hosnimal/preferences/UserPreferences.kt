@@ -21,6 +21,12 @@ class UserPreferences private constructor(private val dataStore: DataStore<Prefe
         }
     }
 
+    suspend fun forgetUserLogin(isForget: Boolean) {
+        dataStore.edit { preferences ->
+            preferences[userKey] = isForget
+        }
+    }
+
     fun getUserSetting(): Flow<User> {
         return dataStore.data.map { preferences ->
             User(

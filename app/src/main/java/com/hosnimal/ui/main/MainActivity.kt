@@ -1,10 +1,11 @@
-package com.hosnimal
+package com.hosnimal.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.PopupMenu
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import com.hosnimal.R
 import com.hosnimal.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

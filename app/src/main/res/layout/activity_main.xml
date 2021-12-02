@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
+    tools:context=".ui.main.MainActivity" >
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/main_fragment"
@@ -14,21 +14,23 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:defaultNavHost="true"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_bar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navGraph='@navigation/main_navigation'/>
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:navGraph='@navigation/main_navigation' />
 
     <me.ibrahimsn.lib.SmoothBottomBar
         android:id="@+id/bottom_navigation_bar"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/bottom_navigation"
         app:backgroundColor="@color/primary"
-        app:iconSize="24dp"
-        app:textSize="16sp"
+        app:iconSize="@dimen/icon_normal"
+        app:textSize="@dimen/text_sub_title"
         app:itemFontFamily="@font/poppins_regular"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/navigation_bar"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:menu="@menu/navigation_bar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

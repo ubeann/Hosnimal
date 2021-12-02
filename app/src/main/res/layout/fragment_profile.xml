@@ -6,253 +6,186 @@
     android:layout_height="wrap_content"
     android:background="@color/background"
     android:fillViewport="true"
-    tools:context=".ProfileFragment">
+    tools:context="fragment.ProfileFragment" >
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="32dp"
-        android:paddingLeft="32dp"
-        android:paddingBottom="16dp"
-        android:paddingRight="32dp">
+        android:layout_margin="@dimen/margin_medium" >
 
         <TextView
-            android:id="@+id/fragment_profile_title"
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/fragment_profile_title"
             android:textColor="@color/textPrimary"
-            android:textSize="18sp"
-            android:letterSpacing="0.15"
+            android:textSize="@dimen/text_title"
             android:fontFamily="@font/poppins_bold"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginBottom="12dp"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/fragment_profile_image"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:id="@+id/image"
+            android:layout_width="@dimen/image_profile"
+            android:layout_height="@dimen/image_profile"
             android:src="@drawable/avatar_female"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/margin_small"
+            app:layout_constraintTop_toBottomOf="@+id/title"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_profile_title"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
-            android:id="@+id/fragment_profile_name"
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
             android:fontFamily="@font/poppins_semi_bold"
-            android:text="@string/fragment_profile_name"
             android:textColor="@color/textSecondary"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="@dimen/text_title"
+            app:layout_constraintTop_toBottomOf="@+id/image"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_profile_image"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
-            android:id="@+id/fragment_profile_joined"
+            android:id="@+id/joined"
+            android:background="@drawable/caption_rounded"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
             android:fontFamily="@font/montserrat_regular"
             android:text="@string/fragment_profile_joined"
             android:textAlignment="center"
             android:textColor="@color/textSecondary"
-            android:textSize="12sp"
-            android:background="@drawable/caption_rounded"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_profile_name"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="@dimen/text_paragraph"
+            android:padding="@dimen/padding_small"
+            app:layout_constraintTop_toBottomOf="@+id/name"
             app:layout_constraintStart_toStartOf="parent"
-            android:padding="8dp"
-            android:layout_marginBottom="12dp"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        <LinearLayout
-            android:id="@+id/full_name"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/name_label"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_profile_joined"
-            android:layout_marginTop="12dp">
+            android:layout_marginTop="@dimen/margin_medium"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="@string/input_name"
+            android:textColor="@color/textCaption"
+            android:textSize="@dimen/text_paragraph"
+            app:layout_constraintTop_toBottomOf="@+id/joined"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_semi_bold"
-                android:text="@string/register_input_name_caption"
-                android:textColor="@color/textCaption"
-                android:textSize="12sp" />
-
-            <EditText
-                android:id="@+id/input_full_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/input_rounded"
-                android:fontFamily="@font/poppins_semi_bold"
-                android:hint="@string/register_input_name_hint"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:padding="8dp"
-                android:textColor="@color/primary"
-                android:textSize="14sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/email"
-            android:layout_width="match_parent"
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/name_text"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/margin_tiny"
+            android:background="@drawable/input_rounded"
+            android:enabled="false"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:padding="@dimen/padding_input"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/text_input"
+            app:layout_constraintTop_toBottomOf="@+id/name_label"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/full_name"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp">
+            app:layout_constraintEnd_toEndOf="parent" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/register_input_email_caption"
-                android:textColor="@color/textCaption"
-                android:textSize="12sp"
-                android:fontFamily="@font/poppins_semi_bold"/>
-
-            <EditText
-                android:id="@+id/input_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/register_input_email_hint"
-                android:inputType="textEmailAddress"
-                android:textSize="14sp"
-                android:textColor="@color/primary"
-                android:fontFamily="@font/poppins_semi_bold"
-                android:padding="8dp"
-                android:background="@drawable/input_rounded"
-                android:importantForAutofill="no"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/phone"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/email_label"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/email"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp">
+            android:layout_marginTop="@dimen/margin_medium"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="@string/input_email"
+            android:textColor="@color/textCaption"
+            android:textSize="@dimen/text_paragraph"
+            app:layout_constraintTop_toBottomOf="@+id/name_text"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/register_input_phone_caption"
-                android:textColor="@color/textCaption"
-                android:textSize="12sp"
-                android:fontFamily="@font/poppins_semi_bold"/>
-
-            <EditText
-                android:id="@+id/input_phone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/register_input_phone_hint"
-                android:inputType="phone"
-                android:textSize="14sp"
-                android:textColor="@color/primary"
-                android:fontFamily="@font/poppins_semi_bold"
-                android:padding="8dp"
-                android:background="@drawable/input_rounded"
-                android:importantForAutofill="no"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/list_input1"
-            android:layout_width="match_parent"
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/email_text"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/margin_tiny"
+            android:background="@drawable/input_rounded"
+            android:enabled="false"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:padding="@dimen/padding_input"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/text_input"
+            app:layout_constraintTop_toBottomOf="@+id/email_label"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/phone"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp"
-            android:baselineAligned="false">
+            app:layout_constraintEnd_toEndOf="parent" />
 
-            <LinearLayout
-                android:id="@+id/birthday"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_marginEnd="8dp">
+        <TextView
+            android:id="@+id/phone_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="@string/input_phone"
+            android:textColor="@color/textCaption"
+            android:textSize="@dimen/text_paragraph"
+            app:layout_constraintTop_toBottomOf="@+id/email_text"
+            app:layout_constraintStart_toStartOf="parent" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/register_input_birthday_caption"
-                    android:textColor="@color/textCaption"
-                    android:textSize="12sp"
-                    android:fontFamily="@font/poppins_semi_bold"/>
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/phone_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_tiny"
+            android:background="@drawable/input_rounded"
+            android:enabled="false"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:padding="@dimen/padding_input"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/text_input"
+            app:layout_constraintTop_toBottomOf="@+id/phone_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-                <EditText
-                    android:id="@+id/input_birthday"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/register_input_birthday_hint"
-                    android:inputType="date"
-                    android:textSize="14sp"
-                    android:textColor="@color/primary"
-                    android:fontFamily="@font/poppins_semi_bold"
-                    android:padding="8dp"
-                    android:background="@drawable/input_rounded"
-                    android:importantForAutofill="no"/>
-            </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/nationality"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_marginStart="8dp">
+        <TextView
+            android:id="@+id/birthday_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="@string/input_birthday"
+            android:textColor="@color/textCaption"
+            android:textSize="@dimen/text_paragraph"
+            app:layout_constraintTop_toBottomOf="@+id/phone_text"
+            app:layout_constraintStart_toStartOf="parent" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/register_input_nationality_caption"
-                    android:textColor="@color/textCaption"
-                    android:textSize="12sp"
-                    android:fontFamily="@font/poppins_semi_bold"/>
-
-                <EditText
-                    android:id="@+id/input_nationality"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/register_input_nationality_hint"
-                    android:inputType="text"
-                    android:textSize="14sp"
-                    android:textColor="@color/primary"
-                    android:fontFamily="@font/poppins_semi_bold"
-                    android:padding="8dp"
-                    android:background="@drawable/input_rounded"
-                    android:importantForAutofill="no"/>
-            </LinearLayout>
-        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/birthday_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_tiny"
+            android:background="@drawable/input_rounded"
+            android:enabled="false"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:padding="@dimen/padding_input"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/text_input"
+            app:layout_constraintTop_toBottomOf="@+id/birthday_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_logout"
-            android:layout_width="150dp"
+            android:layout_width="@dimen/button_minimum"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_ultra"
             android:background="@drawable/btn_exit_rounded"
             android:fontFamily="@font/poppins_semi_bold"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
             android:text="@string/fragment_profile_logout"
             android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/list_input1" />
+            app:layout_constraintTop_toBottomOf="@+id/birthday_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>

@@ -15,7 +15,7 @@ import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.textfield.TextInputLayout
 import com.hosnimal.App
 import com.hosnimal.LoginActivity
-import com.hosnimal.MainActivity
+import com.hosnimal.ui.main.MainActivity
 import com.hosnimal.R
 import com.hosnimal.databinding.ActivityRegisterBinding
 import com.hosnimal.preferences.UserPreferences
