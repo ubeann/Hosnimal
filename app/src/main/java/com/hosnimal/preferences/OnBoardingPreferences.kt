@@ -1,4 +1,4 @@
-package com.hosnimal.ui.on_boarding
+package com.hosnimal.preferences
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences

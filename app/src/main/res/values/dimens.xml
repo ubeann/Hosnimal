@@ -19,7 +19,7 @@
     <dimen name="icon_big">48dp</dimen>
 
     <!-- Radius Size -->
-    <dimen name="radius_tiny">8dp</dimen>
+    <dimen name="radius_tiny">4dp</dimen>
     <dimen name="radius_big">38dp</dimen>
 
     <!-- Button Size -->

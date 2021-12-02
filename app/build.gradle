@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -51,11 +53,15 @@ dependencies {
     // DataStore (Android Jetpack)
     implementation "androidx.datastore:datastore-preferences:1.0.0"
 
+    // Live Data (Android Jetpack)
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
+
     // View Model (Android Jetpack)
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
 
-    // Live Data (Android Jetpack)
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
+    // Room (Android Jetpack)
+    implementation 'androidx.room:room-ktx:2.3.0'
+    kapt 'androidx.room:room-compiler:2.3.0'
 
     // ViewPager2 (Android Jetpack)
     implementation 'androidx.viewpager2:viewpager2:1.0.0'

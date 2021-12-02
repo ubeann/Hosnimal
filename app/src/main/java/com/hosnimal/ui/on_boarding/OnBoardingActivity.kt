@@ -16,6 +16,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import com.hosnimal.App
+import com.hosnimal.preferences.OnBoardingPreferences
 
 class OnBoardingActivity : AppCompatActivity() {
     // Binding

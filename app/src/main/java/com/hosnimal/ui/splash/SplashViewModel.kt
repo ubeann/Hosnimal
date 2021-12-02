@@ -3,8 +3,11 @@ package com.hosnimal.ui.splash
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
-import com.hosnimal.ui.on_boarding.OnBoardingPreferences
+import com.hosnimal.preferences.OnBoardingPreferences
+import com.hosnimal.preferences.UserPreferences
 
-class SplashViewModel  (private val pref: OnBoardingPreferences) : ViewModel() {
-    fun getOnBoardingSetting(): LiveData<Boolean> = pref.getOnBoardingSetting().asLiveData()
+class SplashViewModel  (private val onBoarding: OnBoardingPreferences, private val user: UserPreferences) : ViewModel() {
+    fun getOnBoardingSetting(): LiveData<Boolean> = onBoarding.getOnBoardingSetting().asLiveData()
+
+    fun getUserLogin(): LiveData<Boolean> = user.getUserIsLogin().asLiveData()
 }

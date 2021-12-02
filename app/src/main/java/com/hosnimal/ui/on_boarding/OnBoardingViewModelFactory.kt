@@ -2,6 +2,7 @@ package com.hosnimal.ui.on_boarding
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.hosnimal.preferences.OnBoardingPreferences
 
 class OnBoardingViewModelFactory (private val pref: OnBoardingPreferences) : ViewModelProvider.NewInstanceFactory() {
 
