@@ -9,7 +9,11 @@ import com.hosnimal.R
 import com.hosnimal.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var bindingContent:ActivityMainBinding
+    // Binding
+    private var _binding: ActivityMainBinding? = null
+    private val binding get() = _binding!!
+
+    // Navigation
     private lateinit var navController:NavController
     private lateinit var navHostFragment:NavHostFragment
 
@@ -17,8 +21,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         // Prepare View Binding
-        bindingContent = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(bindingContent.root)
+        _binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // Nav Controller
         navHostFragment = supportFragmentManager.findFragmentById(R.id.main_fragment) as NavHostFragment
@@ -26,10 +30,15 @@ class MainActivity : AppCompatActivity() {
         setupSmoothBottomMenu()
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
+
     private fun setupSmoothBottomMenu() {
         val popupMenu = PopupMenu(this, null)
         popupMenu.inflate(R.menu.navigation_bar)
         val menu = popupMenu.menu
-        bindingContent.bottomNavigationBar.setupWithNavController(menu, navController)
+        binding.bottomNavigationBar.setupWithNavController(menu, navController)
     }
 }

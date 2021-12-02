@@ -11,6 +11,8 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.datepicker.CalendarConstraints
+import com.google.android.material.datepicker.DateValidatorPointBackward
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.textfield.TextInputLayout
 import com.hosnimal.App
@@ -49,10 +51,13 @@ class RegisterActivity : AppCompatActivity() {
 
         // Setting DatePicker Dialog
         binding.btnDatePicker.setOnClickListener {
+            val constraintsBuilder = CalendarConstraints.Builder()
+                .setValidator(DateValidatorPointBackward.now())
             val picker = MaterialDatePicker.Builder.datePicker()
-                    .setTitleText(getString(R.string.input_birthday_date_picker))
-                    .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
-                    .build()
+                .setTitleText(getString(R.string.input_birthday_date_picker))
+                .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
+                .setCalendarConstraints(constraintsBuilder.build())
+                .build()
             picker.show(supportFragmentManager, DATE_PICKER_TAG)
             picker.addOnPositiveButtonClickListener {
                 val dateFormat = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
@@ -78,20 +83,24 @@ class RegisterActivity : AppCompatActivity() {
             val isNameFilled = isInputFilled(binding.fullName, getString(R.string.error_name))
             val isEmailFilled = isInputFilled(binding.email, getString(R.string.error_email))
             val isEmailValid = if (isEmailFilled) isEmailValid(binding.email, getString(R.string.error_email_valid)) else false
-            val isUserRegistered = if (isEmailValid) isEmailRegistered(binding.email, getString(R.string.error_email_registered)) else false
+//            val isUserRegistered = if (isEmailValid) isEmailRegistered(binding.email, getString(R.string.error_email_registered)) else false
             val isPhoneFilled = isInputFilled(binding.phone, getString(R.string.error_phone))
             val isBirthDayFilled = isInputFilled(binding.birthday, getString(R.string.error_birthday))
             val isPasswordFilled = isInputFilled(binding.password, getString(R.string.error_password))
 
             // Checking
-            if (isNameFilled and isEmailFilled and isEmailValid and isPhoneFilled and isBirthDayFilled and isPasswordFilled and !isUserRegistered) {
+            if (isNameFilled and isEmailFilled and isEmailValid and isPhoneFilled and isBirthDayFilled and isPasswordFilled /*and !isUserRegistered*/) {
+                // Create dateFormat
+                val dateFormat = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
+
                 // Save data to database
                 viewModel.register(
                     userName = binding.fullName.editText?.text.toString(),
                     userEmail = binding.email.editText?.text.toString().lowercase(),
                     userPhone = binding.phone.editText?.text.toString(),
                     userBirthDay = binding.birthday.editText?.text.toString(),
-                    userPassword = binding.password.editText?.text.toString()
+                    userPassword = binding.password.editText?.text.toString(),
+                    userCreatedAt = dateFormat.format(Date())
                 )
 
                 // Intent to MainActivity

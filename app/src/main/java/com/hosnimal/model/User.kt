@@ -26,5 +26,8 @@ data class User (
     var birthday: String? = null,
 
     @ColumnInfo(name = "password")
-    var password: String? = null
+    var password: String? = null,
+
+    @ColumnInfo(name = "created_at")
+    var createdAt: String? = null
 ) : Parcelable

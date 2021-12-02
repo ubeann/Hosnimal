@@ -57,6 +57,7 @@ class ProfileFragment : Fragment() {
         viewModel.getUserSetting().observe(viewLifecycleOwner, { user ->
             with(binding) {
                 name.text = user.name
+                joined.text = String.format(getString(R.string.fragment_profile_joined), user.createdAt)
                 nameText.setText(user.name)
                 emailText.setText(user.email)
                 phoneText.setText(user.phone)

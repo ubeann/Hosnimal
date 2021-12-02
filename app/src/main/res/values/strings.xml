@@ -47,7 +47,7 @@
 
     <!-- Fragment Profile -->
     <string name="fragment_profile_title">PROFIL</string>
-    <string name="fragment_profile_joined">Bergabung pada tanggal 3 November 2021</string>
+    <string name="fragment_profile_joined">Bergabung pada tanggal %s</string>
     <string name="fragment_profile_logout">Keluar</string>
 
     <string name="login_btn_text">Masuk</string>
