@@ -12,7 +12,6 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.datepicker.MaterialDatePicker
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
 import com.hosnimal.App
 import com.hosnimal.LoginActivity
@@ -102,13 +101,6 @@ class RegisterActivity : AppCompatActivity() {
                 finish()
             }
         }
-
-        // Observe Notification
-        viewModel.notificationText.observe(this, {
-            it.getContentIfNotHandled()?.let { text ->
-                Snackbar.make(binding.root, text, Snackbar.LENGTH_SHORT).show()
-            }
-        })
     }
 
     override fun onDestroy() {
