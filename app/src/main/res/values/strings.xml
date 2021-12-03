@@ -32,10 +32,12 @@
     <string name="error_name">Silahkan masukkan nama lengkap anda</string>
     <string name="error_email">Silahkan masukkan alamat email anda</string>
     <string name="error_email_registered">Email sudah terdaftar, silahkan gunakan alamat email yang lain</string>
+    <string name="error_email_not_registered">Email belum terdaftar, silahkan daftar terlebih dahulu</string>
     <string name="error_email_valid">Silahkan masukkan alamat email yang valid</string>
     <string name="error_phone">Silahkan masukkan nomor HP anda</string>
     <string name="error_birthday">Silahkan masukkan tanggal lahir anda</string>
     <string name="error_password">Silahkan masukkan kata sandi anda</string>
+    <string name="error_password_not_match">Kata sandi anda salah, silahkan coba lagi</string>
     <string name="error_password_old">Silahkan masukkan kata sandi lama anda</string>
     <string name="error_password_new">Silahkan masukkan kata sandi baru anda</string>
     <string name="error_password_old_not_match">Kata sandi lama anda tidak sama, silahkan coba lagi</string>

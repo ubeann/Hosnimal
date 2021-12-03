@@ -67,6 +67,10 @@ class RegisterActivity : AppCompatActivity() {
 
         // Setting Button Login Alternative
         binding.btnAlternativeLogin.setOnClickListener {
+            // Close Keyboard
+            closeKeyboard()
+
+            // Intent to LoginActivity
             val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
@@ -76,8 +80,7 @@ class RegisterActivity : AppCompatActivity() {
         // Setting Button Register
         binding.btnRegister.setOnClickListener {
             // Close Keyboard
-            val inputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
-            inputMethodManager.hideSoftInputFromWindow(binding.root.windowToken, 0)
+            closeKeyboard()
 
             // Check Input
             val isNameFilled = isInputFilled(binding.fullName, getString(R.string.error_name))
@@ -150,6 +153,11 @@ class RegisterActivity : AppCompatActivity() {
             view.isErrorEnabled = false
             false
         }
+    }
+
+    private fun closeKeyboard() {
+        val inputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(binding.root.windowToken, 0)
     }
 
     companion object {

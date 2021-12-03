@@ -206,14 +206,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_small"
-            android:layout_marginBottom="@dimen/margin_small"
             android:text="@string/register_alternative_btn"
             android:textSize="@dimen/text_paragraph"
             android:textColor="@color/textPrimary"
             android:fontFamily="@font/poppins_semi_bold"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             app:layout_constraintTop_toBottomOf="@+id/btn_register"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/alternative_text"
             app:layout_constraintEnd_toEndOf="parent" />
 
