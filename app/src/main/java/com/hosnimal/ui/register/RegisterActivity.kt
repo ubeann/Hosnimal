@@ -83,13 +83,13 @@ class RegisterActivity : AppCompatActivity() {
             val isNameFilled = isInputFilled(binding.fullName, getString(R.string.error_name))
             val isEmailFilled = isInputFilled(binding.email, getString(R.string.error_email))
             val isEmailValid = if (isEmailFilled) isEmailValid(binding.email, getString(R.string.error_email_valid)) else false
-//            val isUserRegistered = if (isEmailValid) isEmailRegistered(binding.email, getString(R.string.error_email_registered)) else false
+            val isUserRegistered = if (isEmailValid) isEmailRegistered(binding.email, getString(R.string.error_email_registered)) else false
             val isPhoneFilled = isInputFilled(binding.phone, getString(R.string.error_phone))
             val isBirthDayFilled = isInputFilled(binding.birthday, getString(R.string.error_birthday))
             val isPasswordFilled = isInputFilled(binding.password, getString(R.string.error_password))
 
             // Checking
-            if (isNameFilled and isEmailFilled and isEmailValid and isPhoneFilled and isBirthDayFilled and isPasswordFilled /*and !isUserRegistered*/) {
+            if (isNameFilled and isEmailFilled and isEmailValid and isPhoneFilled and isBirthDayFilled and isPasswordFilled and !isUserRegistered) {
                 // Create dateFormat
                 val dateFormat = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
 
@@ -142,7 +142,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun isEmailRegistered(view: TextInputLayout, error: String) : Boolean {
-        return if (viewModel.isRegistered(view.editText?.text.toString().lowercase())) {
+        return if (viewModel.isRegistered(view.editText?.text.toString().lowercase().trim())) {
             view.isErrorEnabled = true
             view.error = error
             true

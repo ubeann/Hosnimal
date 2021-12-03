@@ -21,6 +21,6 @@ interface UserDao {
     @Query("SELECT DISTINCT * from user WHERE email = :email")
     suspend fun getUserByEmail(email: String): User
 
-    @Query("SELECT EXISTS (SELECT 1 from user WHERE email = :email)")
+    @Query("SELECT EXISTS (SELECT * from user WHERE email = :email)")
     suspend fun isUserRegistered(email: String): Boolean
 }

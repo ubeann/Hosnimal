@@ -20,7 +20,7 @@ abstract class HosnimalDatabase : RoomDatabase() {
             if (INSTANCE == null) {
                 synchronized(HosnimalDatabase::class.java) {
                     INSTANCE = Room.databaseBuilder(context.applicationContext,
-                        HosnimalDatabase::class.java, "favoriteUser_database")
+                        HosnimalDatabase::class.java, "hosnimal_database")
                         .build()
                 }
             }

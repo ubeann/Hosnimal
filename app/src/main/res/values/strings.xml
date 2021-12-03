@@ -48,6 +48,7 @@
     <!-- Fragment Profile -->
     <string name="fragment_profile_title">PROFIL</string>
     <string name="fragment_profile_joined">Bergabung pada tanggal %s</string>
+    <string name="fragment_profile_edit">Edit</string>
     <string name="fragment_profile_logout">Keluar</string>
 
     <string name="login_btn_text">Masuk</string>
@@ -102,4 +103,6 @@
     <string name="register_input_nationality_hint">Ex: Indonesia</string>
     <string name="register_input_password_caption">Password</string>
     <string name="register_input_password_hint">Minimal 8 karakter</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

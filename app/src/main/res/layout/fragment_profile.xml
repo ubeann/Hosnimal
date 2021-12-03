@@ -13,6 +13,17 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_medium" >
 
+        <Button
+            android:id="@+id/btn_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment_profile_edit"
+            android:backgroundTint="@color/warningStatus"
+            app:icon="@drawable/ic_round_edit_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/Widget.MaterialComponents.Button.Icon" />
+
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
@@ -22,6 +33,7 @@
             android:textSize="@dimen/text_title"
             android:fontFamily="@font/poppins_bold"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_edit"
             app:layout_constraintStart_toStartOf="parent" />
 
         <de.hdodenhof.circleimageview.CircleImageView

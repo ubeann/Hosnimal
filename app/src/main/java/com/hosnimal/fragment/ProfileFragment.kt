@@ -3,15 +3,15 @@ package com.hosnimal.fragment
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import com.hosnimal.App
 import com.hosnimal.R
 import com.hosnimal.databinding.FragmentProfileBinding
@@ -68,12 +68,18 @@ class ProfileFragment : Fragment() {
         // Button Exit
         binding.btnLogout.setOnClickListener {
             viewModel.forgetUserLogin(true)
-            val intent = Intent(activity, RegisterActivity::class.java)
-            startActivity(intent)
-            activity?.overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-            activity?.finish()
+            activity?.let {
+                val intent = Intent(it, RegisterActivity::class.java)
+                it.startActivity(intent)
+                it.overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                it.finish()
+            }
         }
 
+        // Button Edit
+        binding.btnEdit.setOnClickListener {
+            Navigation.createNavigateOnClickListener(R.id.action_profile_fragment_to_editProfileFragment)
+        }
     }
 
     override fun onDestroy() {
