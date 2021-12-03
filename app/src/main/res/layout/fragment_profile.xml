@@ -190,7 +190,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_medium"
             android:layout_marginBottom="@dimen/margin_ultra"
-            android:background="@drawable/btn_exit_rounded"
+            android:background="@drawable/btn_round_exit"
             android:fontFamily="@font/poppins_semi_bold"
             android:text="@string/fragment_profile_logout"
             android:textColor="@color/white"

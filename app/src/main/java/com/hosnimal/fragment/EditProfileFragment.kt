@@ -132,10 +132,12 @@ class EditProfileFragment : Fragment() {
             closeKeyboard()
 
             // Check Input
-            val isOldPasswordMatch = isOldPasswordMatch(binding.passwordOld, getString(R.string.error_password_old))
+            val isOldPasswordFilled = isInputFilled(binding.passwordOld, getString(R.string.error_password_old))
+            val isOldPasswordMatch = if (isOldPasswordFilled) isOldPasswordMatch(binding.passwordOld, getString(R.string.error_password_old_not_match)) else false
+            val isNewPasswordFilled = isInputFilled(binding.passwordNew, getString(R.string.error_password_new))
 
             // Checking
-            if  (isOldPasswordMatch) {
+            if  (isOldPasswordFilled and isOldPasswordMatch and isNewPasswordFilled) {
                 viewModel.updateUserPassword(emailUser, binding.passwordNew.editText?.text.toString())
             }
         }

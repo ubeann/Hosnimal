@@ -36,8 +36,9 @@
     <string name="error_phone">Silahkan masukkan nomor HP anda</string>
     <string name="error_birthday">Silahkan masukkan tanggal lahir anda</string>
     <string name="error_password">Silahkan masukkan kata sandi anda</string>
-    <string name="error_password_old">Kata sandi lama anda tidak sama, silahkan coba lagi</string>
-    <string name="error_dismiss">Tutup</string>
+    <string name="error_password_old">Silahkan masukkan kata sandi lama anda</string>
+    <string name="error_password_new">Silahkan masukkan kata sandi baru anda</string>
+    <string name="error_password_old_not_match">Kata sandi lama anda tidak sama, silahkan coba lagi</string>
 
     <!-- Register -->
     <string name="register_logo">Logo Hosminal</string>
@@ -71,12 +72,9 @@
     <string name="login_caption">Silahkan masukkan data-data akun anda</string>
     <string name="navigation_bar_home">Beranda</string>
     <string name="navigation_bar_maps">Map</string>
-    <string name="navigation_bar_notification">Notif</string>
     <string name="navigation_bar_profile">Profil</string>
 
-    <string name="navigation_bar_chat">Pesan</string>
     <string name="fragment_map_title">MAP</string>
-    <string name="fragment_map_description_1">Foto Rumah sakit</string>
     <string name="fragment_map_detail_1_name">RS Universitas Airlangga</string>
     <string name="fragment_map_detail_1_location">Jl. Airlangga No.4 – 6, Airlangga, Kec. Gubeng, SBY</string>
     <string name="fragment_map_status_1">Buka</string>
@@ -102,16 +100,6 @@
     <string name="fragment_home_clinic_image">Foto Rumah Sakit</string>
 
     <!-- Need to Delete -->
-    <string name="register_input_name_caption">Nama Lengkap</string>
-    <string name="register_input_name_hint">Ex: Jaliiiku</string>
-    <string name="register_input_email_caption">Alamat Email</string>
     <string name="register_input_email_hint">Ex: jaliku@gmail.com</string>
-    <string name="register_input_phone_caption">Nomor HP</string>
-    <string name="register_input_phone_hint">Ex: 0812345678</string>
-    <string name="register_input_birthday_caption">Tanggal Lahir</string>
-    <string name="register_input_birthday_hint">DD/MM/YYYY</string>
-    <string name="register_input_nationality_caption">Negara</string>
-    <string name="register_input_nationality_hint">Ex: Indonesia</string>
-    <string name="register_input_password_caption">Password</string>
     <string name="register_input_password_hint">Minimal 8 karakter</string>
 </resources>

@@ -63,7 +63,6 @@
                 android:fontFamily="@font/poppins_semi_bold"/>
 
             <EditText
-                android:id="@+id/input_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/register_input_email_hint"
@@ -92,7 +91,6 @@
                 android:textSize="12sp" />
 
             <EditText
-                android:id="@+id/input_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/input_rounded"
@@ -110,7 +108,7 @@
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/btn_primary_rounded"
+        android:background="@drawable/btn_round_primary"
         android:fontFamily="@font/poppins_semi_bold"
         android:text="@string/login_btn_text"
         android:textColor="@color/white"

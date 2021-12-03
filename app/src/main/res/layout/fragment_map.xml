@@ -38,14 +38,12 @@
             android:layout_marginTop="12dp"
             android:layout_marginBottom="12dp">
             <ImageView
-                android:id="@+id/fragment_map_image_1"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:src="@drawable/hospital_1_rounded"
                 android:layout_marginEnd="4dp"
                 android:contentDescription="@string/fragment_home_clinic_image"/>
             <LinearLayout
-                android:id="@+id/fragment_map_detail_1"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -53,7 +51,6 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="4dp">
                 <TextView
-                    android:id="@+id/fragment_map_detail_1_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/fragment_map_detail_1_name"
@@ -62,7 +59,6 @@
                     android:fontFamily="@font/poppins_semi_bold"
                     android:layout_marginBottom="4dp"/>
                 <TextView
-                    android:id="@+id/fragment_map_detail_1_location"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/fragment_map_detail_1_location"
@@ -71,7 +67,6 @@
                     android:fontFamily="@font/montserrat_regular"/>
             </LinearLayout>
             <TextView
-                android:id="@+id/fragment_map_status_1"
                 android:layout_width="52dp"
                 android:layout_height="wrap_content"
                 android:padding="4dp"
@@ -83,7 +78,6 @@
                 android:fontFamily="@font/poppins_semi_bold"/>
         </LinearLayout>
         <LinearLayout
-            android:id="@+id/fragment_map_list_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -94,14 +88,12 @@
             android:layout_marginTop="12dp"
             android:layout_marginBottom="12dp">
             <ImageView
-                android:id="@+id/fragment_map_image_2"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:src="@drawable/hospital_2_rounded"
                 android:layout_marginEnd="4dp"
                 android:contentDescription="@string/fragment_home_clinic_image"/>
             <LinearLayout
-                android:id="@+id/fragment_map_detail_2"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -109,7 +101,6 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="4dp">
                 <TextView
-                    android:id="@+id/fragment_map_detail_2_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/fragment_map_detail_2_name"
@@ -118,7 +109,6 @@
                     android:fontFamily="@font/poppins_semi_bold"
                     android:layout_marginBottom="4dp"/>
                 <TextView
-                    android:id="@+id/fragment_map_detail_2_location"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/fragment_map_detail_2_location"
@@ -127,7 +117,6 @@
                     android:fontFamily="@font/montserrat_regular"/>
             </LinearLayout>
             <TextView
-                android:id="@+id/fragment_map_status_2"
                 android:layout_width="52dp"
                 android:layout_height="wrap_content"
                 android:padding="4dp"

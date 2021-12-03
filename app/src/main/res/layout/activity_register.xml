@@ -116,7 +116,7 @@
             android:layout_width="@dimen/button_icon"
             android:layout_height="@dimen/button_icon"
             android:layout_marginTop="@dimen/margin_tiny"
-            android:background="@drawable/btn_icon_rounded"
+            android:background="@drawable/btn_round_icon"
             android:src="@drawable/ic_round_calendar_month_24"
             app:layout_constraintTop_toTopOf="@+id/birthday"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -162,7 +162,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_medium"
-            android:background="@drawable/btn_primary_rounded"
+            android:background="@drawable/btn_round_primary"
             android:fontFamily="@font/poppins_semi_bold"
             android:text="@string/register_btn_text"
             android:textColor="@color/white"

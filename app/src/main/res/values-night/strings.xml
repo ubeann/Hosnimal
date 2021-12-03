@@ -7,7 +7,6 @@
     <string name="register_logo">Logo Hosminal</string>
     <string name="register_tag_line">Selamat Datang di Hosnimal</string>
     <string name="register_caption">Silahkan buat sebuah akun dan nikmati fitur-fitur aplikasi Hosnimal</string>
-    <string name="register_input_nationality_caption">Negara</string>
     <string name="register_input_password_hint">Minimal 8 karakter</string>
     <string name="register_btn_text">DAFTAR SEKARANG</string>
     <string name="login_alternative_caption">Belum punya akun?</string>
@@ -17,15 +16,13 @@
     <string name="login_caption">Silahkan masukkan data-data akun anda</string>
     <string name="navigation_bar_home">Beranda</string>
     <string name="navigation_bar_maps">Map</string>
-    <string name="navigation_bar_notification">Notif</string>
     <string name="navigation_bar_profile">Profil</string>
     <string name="fragment_profile_title">PROFIL</string>
-    <string name="fragment_profile_name">Rara Kim</string>
     <string name="fragment_profile_joined">Bergabung pada tanggal 3 November 2021</string>
     <string name="fragment_profile_logout">Keluar</string>
     <string name="fragment_map_title">MAP</string>
     <string name="fragment_map_detail_1_name">RS Universitas Airlangga</string>
-    <string name="fragment_map_detail_1_location">Jl. Airlangga No.4 - 6, Airlangga, Kec. Gubeng, SBY</string>
+    <string name="fragment_map_detail_1_location">Jl. Airlangga No.4 – 6, Airlangga, Kec. Gubeng, SBY</string>
     <string name="fragment_map_status_1">Buka</string>
     <string name="fragment_map_status_2">Tutup</string>
     <string name="fragment_map_detail_2_name">RS Bhayangkara Surabaya</string>
