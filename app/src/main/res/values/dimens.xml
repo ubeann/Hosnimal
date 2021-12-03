@@ -29,6 +29,7 @@
     <!-- Button Size -->
     <dimen name="button_icon">60dp</dimen>
     <dimen name="button_minimum">150dp</dimen>
+    <dimen name="button_medium">175dp</dimen>
 
     <!-- Bottom Navigation Size -->
     <dimen name="bottom_navigation">70dp</dimen>

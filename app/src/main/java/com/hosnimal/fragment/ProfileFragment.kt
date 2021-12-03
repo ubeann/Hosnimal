@@ -12,6 +12,7 @@ import androidx.datastore.preferences.preferencesDataStore
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import com.hosnimal.App
 import com.hosnimal.R
 import com.hosnimal.databinding.FragmentProfileBinding
@@ -43,7 +44,7 @@ class ProfileFragment : Fragment() {
         preferences = UserPreferences.getInstance(requireActivity().dataStore)
 
         // Set ViewModel
-        viewModel = ViewModelProvider(this, MainViewModelFactory(preferences))[MainViewModel::class.java]
+        viewModel = ViewModelProvider(this, MainViewModelFactory(requireActivity().application, preferences))[MainViewModel::class.java]
 
         // Inflate the layout for this fragment
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
@@ -78,7 +79,7 @@ class ProfileFragment : Fragment() {
 
         // Button Edit
         binding.btnEdit.setOnClickListener {
-            Navigation.createNavigateOnClickListener(R.id.action_profile_fragment_to_editProfileFragment)
+            it.findNavController().navigate(R.id.action_profile_fragment_to_editProfileFragment)
         }
     }
 

@@ -25,6 +25,8 @@
     <string name="input_birthday">Tanggal Lahir</string>
     <string name="input_birthday_date_picker">Pilih Tanggal Lahir</string>
     <string name="input_password">Kata Sandi</string>
+    <string name="input_password_old">Kata Sandi Lama</string>
+    <string name="input_password_new">Kata Sandi Baru</string>
 
     <!-- Error -->
     <string name="error_name">Silahkan masukkan nama lengkap anda</string>
@@ -34,6 +36,7 @@
     <string name="error_phone">Silahkan masukkan nomor HP anda</string>
     <string name="error_birthday">Silahkan masukkan tanggal lahir anda</string>
     <string name="error_password">Silahkan masukkan kata sandi anda</string>
+    <string name="error_password_old">Kata sandi lama anda tidak sama, silahkan coba lagi</string>
     <string name="error_dismiss">Tutup</string>
 
     <!-- Register -->
@@ -50,6 +53,14 @@
     <string name="fragment_profile_joined">Bergabung pada tanggal %s</string>
     <string name="fragment_profile_edit">Edit</string>
     <string name="fragment_profile_logout">Keluar</string>
+
+    <!-- Fragment Edit Profile -->
+    <string name="fragment_edit_profile_title">EDIT PROFIL</string>
+    <string name="fragment_edit_profile_bio">Data Diri</string>
+    <string name="fragment_edit_profile_bio_save">Simpan</string>
+    <string name="fragment_edit_profile_password">Kata Sandi</string>
+    <string name="fragment_edit_profile_password_save">Ubah Kata Sandi</string>
+
 
     <string name="login_btn_text">Masuk</string>
     <string name="login_alternative_caption">Belum punya akun?</string>
@@ -103,6 +114,4 @@
     <string name="register_input_nationality_hint">Ex: Indonesia</string>
     <string name="register_input_password_caption">Password</string>
     <string name="register_input_password_hint">Minimal 8 karakter</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
