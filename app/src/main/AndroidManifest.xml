@@ -11,7 +11,7 @@
         android:theme="@style/Theme.Hosnimal"
         android:fullBackupContent="@xml/backup_descriptor">
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.login.LoginActivity"
             android:exported="true" />
         <activity
             android:name=".ui.register.RegisterActivity"

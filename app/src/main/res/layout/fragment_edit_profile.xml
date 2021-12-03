@@ -3,20 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@color/background"
     android:fillViewport="true"
     tools:context="fragment.EditProfileFragment" >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_medium">
+        android:layout_height="wrap_content" >
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/btn_back"
             android:layout_width="36dp"
             android:layout_height="36dp"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginStart="@dimen/margin_medium"
             android:src="@drawable/ic_round_chevron_left_24"
             android:background="@drawable/btn_round_icon"
             app:layout_constraintTop_toTopOf="parent"
@@ -26,6 +27,7 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
             android:layout_marginStart="@dimen/margin_medium"
             android:text="@string/fragment_edit_profile_title"
             android:textColor="@color/textPrimary"
@@ -40,6 +42,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
             android:fontFamily="@font/poppins_bold"
             android:text="@string/fragment_edit_profile_bio"
             android:textAlignment="textStart"
@@ -53,6 +57,8 @@
             android:id="@+id/full_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
             android:hint="@string/input_name"
             app:startIconDrawable="@drawable/ic_round_person_24"
             app:startIconContentDescription="@string/input_name"
@@ -75,6 +81,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
             android:hint="@string/input_email"
             app:startIconDrawable="@drawable/ic_round_email_24"
             app:startIconContentDescription="@string/input_email"
@@ -97,6 +105,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
             android:hint="@string/input_phone"
             app:startIconDrawable="@drawable/ic_round_phone_24"
             app:startIconContentDescription="@string/input_phone"
@@ -119,6 +129,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_medium"
             android:layout_marginEnd="@dimen/margin_small"
             android:hint="@string/input_birthday"
             app:startIconDrawable="@drawable/ic_round_cake_24"
@@ -139,9 +150,10 @@
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/btn_date_picker"
-            android:layout_width="@dimen/button_icon"
-            android:layout_height="@dimen/button_icon"
+            android:layout_width="@dimen/button_icon_big"
+            android:layout_height="@dimen/button_icon_big"
             android:layout_marginTop="@dimen/margin_tiny"
+            android:layout_marginEnd="@dimen/margin_medium"
             android:background="@drawable/btn_round_icon"
             android:src="@drawable/ic_round_calendar_month_24"
             app:layout_constraintTop_toTopOf="@+id/birthday"
@@ -152,6 +164,7 @@
             android:layout_width="@dimen/button_minimum"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
             android:background="@drawable/btn_round_edit"
             android:fontFamily="@font/poppins_semi_bold"
             android:text="@string/fragment_edit_profile_bio_save"
@@ -165,6 +178,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
             android:fontFamily="@font/poppins_bold"
             android:text="@string/fragment_edit_profile_password"
             android:textAlignment="textStart"
@@ -178,6 +193,8 @@
             android:id="@+id/password_old"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
             android:hint="@string/input_password_old"
             app:startIconDrawable="@drawable/ic_round_lock_24"
             app:startIconContentDescription="@string/input_password"
@@ -200,6 +217,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
             android:hint="@string/input_password_new"
             app:startIconDrawable="@drawable/ic_round_lock_24"
             app:startIconContentDescription="@string/input_password"
@@ -223,7 +242,8 @@
             android:layout_width="@dimen/button_medium"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_medium"
-            android:layout_marginBottom="@dimen/margin_ultra"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
             android:background="@drawable/btn_round_edit"
             android:fontFamily="@font/poppins_semi_bold"
             android:text="@string/fragment_edit_profile_password_save"
@@ -233,4 +253,5 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>

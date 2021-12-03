@@ -1,9 +1,10 @@
-package com.hosnimal
+package com.hosnimal.ui.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.hosnimal.R
 import com.hosnimal.ui.main.MainActivity
 import com.hosnimal.ui.register.RegisterActivity
 

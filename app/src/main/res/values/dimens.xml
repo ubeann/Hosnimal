@@ -27,7 +27,8 @@
     <dimen name="radius_big">38dp</dimen>
 
     <!-- Button Size -->
-    <dimen name="button_icon">60dp</dimen>
+    <dimen name="button_icon_medium">36dp</dimen>
+    <dimen name="button_icon_big">60dp</dimen>
     <dimen name="button_minimum">150dp</dimen>
     <dimen name="button_medium">175dp</dimen>
 
@@ -37,4 +38,6 @@
     <!-- Image Size -->
     <dimen name="image_profile">150dp</dimen>
 
+    <!-- Animation Size -->
+    <dimen name="animation_big">250dp</dimen>
 </resources>
