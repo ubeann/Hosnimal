@@ -84,6 +84,9 @@ dependencies {
     // Lottie Animations
     implementation 'com.airbnb.android:lottie:4.1.0'
 
+    // Shimmer Loading
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
     // Smooth Bottom Bar
     implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.8'
 
