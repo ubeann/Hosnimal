@@ -11,12 +11,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/padding_medium">
+        android:paddingBottom="@dimen/margin_medium" >
 
         <TextView
             android:id="@+id/name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginStart="@dimen/margin_medium"
             android:layout_marginEnd="@dimen/margin_medium"
             android:text="@string/fragment_home_title"
             android:textColor="@color/textPrimary"
@@ -30,6 +32,8 @@
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/notification"
             android:background="@drawable/btn_round_primary"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
             android:layout_width="@dimen/button_icon_medium"
             android:layout_height="@dimen/button_icon_medium"
             android:src="@drawable/ic_round_notifications_24"
@@ -42,6 +46,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
             app:layout_constraintTop_toBottomOf="@+id/notification"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -51,6 +57,7 @@
             android:id="@+id/pharmacy"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
             android:layout_marginEnd="@dimen/margin_medium"
             android:text="@string/fragment_home_pharmacy_title"
             android:textSize="@dimen/text_sub_title"
@@ -66,6 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_medium"
             android:text="@string/fragment_home_pharmacy_btn"
             android:textSize="@dimen/text_paragraph"
             android:textColor="@color/textCaption"
@@ -79,6 +87,8 @@
             android:id="@+id/pharmacy_list"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_small"
             app:layout_constraintTop_toBottomOf="@+id/pharmacy_see_all"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

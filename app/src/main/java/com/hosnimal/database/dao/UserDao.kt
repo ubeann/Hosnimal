@@ -18,7 +18,7 @@ interface UserDao {
     @Query("SELECT * from user ORDER BY id ASC")
     fun getAllUsers(): LiveData<List<User>>
 
-    @Query("SELECT DISTINCT * from user WHERE email = :email ORDER BY id ASC LIMIT 1")
+    @Query("SELECT * from user WHERE email = :email ORDER BY id ASC LIMIT 1")
     suspend fun getUserByEmail(email: String): User
 
     @Query("SELECT EXISTS (SELECT * from user WHERE email = :email)")

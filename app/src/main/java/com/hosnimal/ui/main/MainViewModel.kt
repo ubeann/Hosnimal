@@ -72,4 +72,6 @@ class MainViewModel(application: Application, private val preferences: UserPrefe
     }
 
     fun getTopProduct(qty: Int): LiveData<List<Product>> = mProductRepository.getTopProducts(qty)
+
+    fun getAllProduct(): LiveData<List<Product>> = mProductRepository.getAllProducts()
 }

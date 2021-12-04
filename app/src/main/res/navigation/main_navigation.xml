@@ -11,6 +11,9 @@
         <action
             android:id="@+id/action_home_fragment_to_maps_fragment"
             app:destination="@id/maps_fragment"/>
+        <action
+            android:id="@+id/action_home_fragment_to_pharmacyFragment"
+            app:destination="@id/pharmacyFragment" />
     </fragment>
 
     <fragment
@@ -38,4 +41,10 @@
         android:name="com.hosnimal.fragment.EditProfileFragment"
         android:label="fragment_edit_profile"
         tools:layout="@layout/fragment_edit_profile" />
+
+    <fragment
+        android:id="@+id/pharmacyFragment"
+        android:name="com.hosnimal.fragment.PharmacyFragment"
+        android:label="fragment_pharmacy"
+        tools:layout="@layout/fragment_pharmacy" />
 </navigation>

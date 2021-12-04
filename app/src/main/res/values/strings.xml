@@ -69,6 +69,9 @@
     <string name="fragment_home_clinic">Klinik Terdekat</string>
     <string name="fragment_home_clinic_image">Foto Rumah Sakit</string>
 
+    <!-- Fragment Pharmacy -->
+    <string name="fragment_pharmacy_title">FARMASI</string>
+
     <!-- Fragment Profile -->
     <string name="fragment_profile_title">PROFIL</string>
     <string name="fragment_profile_joined">Bergabung pada tanggal %s</string>
