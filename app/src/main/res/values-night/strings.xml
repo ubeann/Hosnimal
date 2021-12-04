@@ -16,7 +16,6 @@
     <string name="navigation_bar_maps">Map</string>
     <string name="navigation_bar_profile">Profil</string>
     <string name="fragment_profile_title">PROFIL</string>
-    <string name="fragment_profile_joined">Bergabung pada tanggal 3 November 2021</string>
     <string name="fragment_profile_logout">Keluar</string>
     <string name="fragment_map_title">MAP</string>
     <string name="fragment_map_detail_1_name">RS Universitas Airlangga</string>
@@ -25,21 +24,10 @@
     <string name="fragment_map_status_2">Tutup</string>
     <string name="fragment_map_detail_2_name">RS Bhayangkara Surabaya</string>
     <string name="fragment_map_detail_2_location">Jl. Ahmad Yani No.116, Ketintang, Kec. Gayungan, Kota SBY, Jawa Timur 60231</string>
-    <string name="fragment_home_title">Hi, Rara Kim</string>
     <string name="fragment_home_card_caption">Rekomendasi Mingguan</string>
     <string name="fragment_home_card_tagline">Berjalan-jalan</string>
     <string name="fragment_home_pharmacy_title">Farmasi</string>
     <string name="fragment_home_pharmacy_btn">Lihat semua</string>
-    <string name="fragment_home_pharmacy_item">Foto Produk</string>
-    <string name="fragment_home_pharmacy_item_1_name">Nutri-plus Gel</string>
-    <string name="fragment_home_pharmacy_item_1_desc">Suplemen</string>
-    <string name="fragment_home_pharmacy_item_1_price">Rp 32.000</string>
-    <string name="fragment_home_pharmacy_item_2_name">Me-O Creamy Treats</string>
-    <string name="fragment_home_pharmacy_item_2_price">Rp 17.000</string>
-    <string name="fragment_home_pharmacy_item_2_desc">Snack</string>
-    <string name="fragment_home_pharmacy_item_3_name">Whiskas - 1.2 Kg</string>
-    <string name="fragment_home_pharmacy_item_3_desc">Makanan</string>
-    <string name="fragment_home_pharmacy_item_3_price">Rp 75.000</string>
     <string name="fragment_home_clinic">Klinik Terdekat</string>
     <string name="fragment_home_clinic_image">Foto Rumah Sakit</string>
 </resources>

@@ -66,15 +66,6 @@
     <string name="fragment_home_pharmacy_btn">Lihat semua</string>
     <string name="fragment_home_pharmacy_photo">Foto Produk</string>
 
-    <string name="fragment_home_pharmacy_item_1_name">Nutri-plus Gel</string>
-    <string name="fragment_home_pharmacy_item_1_desc">Suplemen</string>
-    <string name="fragment_home_pharmacy_item_1_price">Rp 32.000</string>
-    <string name="fragment_home_pharmacy_item_2_name">Me-O Creamy Treats</string>
-    <string name="fragment_home_pharmacy_item_2_price">Rp 17.000</string>
-    <string name="fragment_home_pharmacy_item_2_desc">Snack</string>
-    <string name="fragment_home_pharmacy_item_3_name">Whiskas - 1.2 Kg</string>
-    <string name="fragment_home_pharmacy_item_3_desc">Makanan</string>
-    <string name="fragment_home_pharmacy_item_3_price">Rp 75.000</string>
     <string name="fragment_home_clinic">Klinik Terdekat</string>
     <string name="fragment_home_clinic_image">Foto Rumah Sakit</string>
 
