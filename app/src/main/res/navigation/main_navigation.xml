@@ -5,7 +5,7 @@
     app:startDestination="@id/home_fragment">
     <fragment
         android:id="@+id/home_fragment"
-        android:name="com.hosnimal.HomeFragment"
+        android:name="com.hosnimal.fragment.HomeFragment"
         android:label="@string/navigation_bar_home"
         tools:layout="@layout/fragment_home">
         <action

@@ -60,7 +60,7 @@ class RegisterActivity : AppCompatActivity() {
                 .build()
             picker.show(supportFragmentManager, DATE_PICKER_TAG)
             picker.addOnPositiveButtonClickListener {
-                val dateFormat = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
+                val dateFormat = SimpleDateFormat("dd MMMM yyyy", Locale("in", "ID"))
                 binding.birthday.editText?.setText(dateFormat.format(it))
             }
         }
@@ -94,7 +94,7 @@ class RegisterActivity : AppCompatActivity() {
             // Checking
             if (isNameFilled and isEmailFilled and isEmailValid and isPhoneFilled and isBirthDayFilled and isPasswordFilled and !isUserRegistered) {
                 // Create dateFormat
-                val dateFormat = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
+                val dateFormat = SimpleDateFormat("dd MMMM yyyy", Locale("in", "ID"))
 
                 // Save data to database
                 viewModel.register(

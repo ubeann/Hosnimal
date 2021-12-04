@@ -4,13 +4,16 @@ import android.app.Application
 import androidx.lifecycle.*
 import com.hosnimal.helper.AESEncryption
 import com.hosnimal.helper.Event
+import com.hosnimal.model.Product
 import com.hosnimal.model.User
 import com.hosnimal.preferences.UserPreferences
+import com.hosnimal.repository.ProductRepository
 import com.hosnimal.repository.UserRepository
 import kotlinx.coroutines.launch
 
 class MainViewModel(application: Application, private val preferences: UserPreferences) : ViewModel() {
     private val mUserRepository: UserRepository = UserRepository(application)
+    private val mProductRepository: ProductRepository = ProductRepository(application)
     private val _notificationText = MutableLiveData<Event<String>>()
     val notificationText: LiveData<Event<String>> = _notificationText
 
@@ -67,4 +70,6 @@ class MainViewModel(application: Application, private val preferences: UserPrefe
         // Send notification
         _notificationText.value = Event("Password user ${user.name} berhasil diganti")
     }
+
+    fun getTopProduct(qty: Int): LiveData<List<Product>> = mProductRepository.getTopProducts(qty)
 }

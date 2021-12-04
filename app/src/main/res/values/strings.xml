@@ -59,12 +59,13 @@
     <string name="login_alternative_btn">Daftar sekarang</string>
 
     <!-- Fragment Home -->
-    <string name="fragment_home_title">Hi, %s</string>
+    <string name="fragment_home_title">Hai, %s</string>
     <string name="fragment_home_card_caption">Rekomendasi Mingguan</string>
     <string name="fragment_home_card_tagline">Berjalan-jalan</string>
     <string name="fragment_home_pharmacy_title">Farmasi</string>
     <string name="fragment_home_pharmacy_btn">Lihat semua</string>
-    <string name="fragment_home_pharmacy_item">Foto Produk</string>
+    <string name="fragment_home_pharmacy_photo">Foto Produk</string>
+
     <string name="fragment_home_pharmacy_item_1_name">Nutri-plus Gel</string>
     <string name="fragment_home_pharmacy_item_1_desc">Suplemen</string>
     <string name="fragment_home_pharmacy_item_1_price">Rp 32.000</string>

@@ -91,7 +91,7 @@ class EditProfileFragment : Fragment() {
                 .build()
             picker.show(requireActivity().supportFragmentManager, DATE_PICKER_TAG)
             picker.addOnPositiveButtonClickListener {
-                val dateFormat = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
+                val dateFormat = SimpleDateFormat("dd MMMM yyyy", Locale("in", "ID"))
                 binding.birthday.editText?.setText(dateFormat.format(it))
             }
         }
