@@ -22,7 +22,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            layout="@layout/welcome_card" />
+            layout="@layout/card_welcome" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/full_name"

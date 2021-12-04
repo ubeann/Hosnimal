@@ -51,39 +51,15 @@
     <string name="register_alternative_btn">Masuk</string>
     <string name="register_agreement_caption"><![CDATA[Dengan Membuat akun, Anda mengonfirmasi bahwa Anda menerima Ketentuan Penggunaan & Kebijakan Privasi kami]]></string>
 
-    <!-- Fragment Profile -->
-    <string name="fragment_profile_title">PROFIL</string>
-    <string name="fragment_profile_joined">Bergabung pada tanggal %s</string>
-    <string name="fragment_profile_edit">Edit</string>
-    <string name="fragment_profile_logout">Keluar</string>
-
-    <!-- Fragment Edit Profile -->
-    <string name="fragment_edit_profile_title">EDIT PROFIL</string>
-    <string name="fragment_edit_profile_bio">Data Diri</string>
-    <string name="fragment_edit_profile_bio_save">Simpan</string>
-    <string name="fragment_edit_profile_password">Kata Sandi</string>
-    <string name="fragment_edit_profile_password_save">Ubah Kata Sandi</string>
-
-
+    <!-- Login -->
+    <string name="login_tag_line">Masuk Sekarang</string>
+    <string name="login_caption">Silahkan masukkan data-data akun anda</string>
     <string name="login_btn_text">Masuk</string>
     <string name="login_alternative_caption">Belum punya akun?</string>
     <string name="login_alternative_btn">Daftar sekarang</string>
-    <string name="login_input_email_caption">Email</string>
-    <string name="login_input_password_caption">Password</string>
-    <string name="login_tag_line">Masuk Sekarang</string>
-    <string name="login_caption">Silahkan masukkan data-data akun anda</string>
-    <string name="navigation_bar_home">Beranda</string>
-    <string name="navigation_bar_maps">Map</string>
-    <string name="navigation_bar_profile">Profil</string>
 
-    <string name="fragment_map_title">MAP</string>
-    <string name="fragment_map_detail_1_name">RS Universitas Airlangga</string>
-    <string name="fragment_map_detail_1_location">Jl. Airlangga No.4 – 6, Airlangga, Kec. Gubeng, SBY</string>
-    <string name="fragment_map_status_1">Buka</string>
-    <string name="fragment_map_status_2">Tutup</string>
-    <string name="fragment_map_detail_2_name">RS Bhayangkara Surabaya</string>
-    <string name="fragment_map_detail_2_location">Jl. Ahmad Yani No.116, Kota SBY, Jawa Timur 60231</string>
-    <string name="fragment_home_title">Hi, Rara Kim</string>
+    <!-- Fragment Home -->
+    <string name="fragment_home_title">Hi, %s</string>
     <string name="fragment_home_card_caption">Rekomendasi Mingguan</string>
     <string name="fragment_home_card_tagline">Berjalan-jalan</string>
     <string name="fragment_home_pharmacy_title">Farmasi</string>
@@ -101,7 +77,29 @@
     <string name="fragment_home_clinic">Klinik Terdekat</string>
     <string name="fragment_home_clinic_image">Foto Rumah Sakit</string>
 
-    <!-- Need to Delete -->
-    <string name="register_input_email_hint">Ex: jaliku@gmail.com</string>
-    <string name="register_input_password_hint">Minimal 8 karakter</string>
+    <!-- Fragment Profile -->
+    <string name="fragment_profile_title">PROFIL</string>
+    <string name="fragment_profile_joined">Bergabung pada tanggal %s</string>
+    <string name="fragment_profile_edit">Edit</string>
+    <string name="fragment_profile_logout">Keluar</string>
+
+    <!-- Fragment Edit Profile -->
+    <string name="fragment_edit_profile_title">EDIT PROFIL</string>
+    <string name="fragment_edit_profile_bio">Data Diri</string>
+    <string name="fragment_edit_profile_bio_save">Simpan</string>
+    <string name="fragment_edit_profile_password">Kata Sandi</string>
+    <string name="fragment_edit_profile_password_save">Ubah Kata Sandi</string>
+
+    <!-- Navigation -->
+    <string name="navigation_bar_home">Beranda</string>
+    <string name="navigation_bar_maps">Map</string>
+    <string name="navigation_bar_profile">Profil</string>
+
+    <string name="fragment_map_title">MAP</string>
+    <string name="fragment_map_detail_1_name">RS Universitas Airlangga</string>
+    <string name="fragment_map_detail_1_location">Jl. Airlangga No.4 – 6, Airlangga, Kec. Gubeng, SBY</string>
+    <string name="fragment_map_status_1">Buka</string>
+    <string name="fragment_map_status_2">Tutup</string>
+    <string name="fragment_map_detail_2_name">RS Bhayangkara Surabaya</string>
+    <string name="fragment_map_detail_2_location">Jl. Ahmad Yani No.116, Kota SBY, Jawa Timur 60231</string>
 </resources>

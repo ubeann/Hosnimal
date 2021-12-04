@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background_rounded"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/padding_medium" >
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/animation_medium"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/fragment_home_welcome"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/recommend"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="@string/fragment_home_card_caption"
+        android:textSize="@dimen/text_paragraph"
+        android:textColor="@color/textSecondary"
+        android:fontFamily="@font/poppins_semi_bold"
+        app:layout_constraintTop_toBottomOf="@+id/animation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/fragment_home_card_tagline"
+        android:textSize="@dimen/text_title"
+        android:textColor="@color/textPrimary"
+        android:fontFamily="@font/poppins_bold"
+        app:layout_constraintTop_toBottomOf="@+id/recommend"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

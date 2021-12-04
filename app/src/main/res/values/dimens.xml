@@ -37,7 +37,9 @@
 
     <!-- Image Size -->
     <dimen name="image_profile">150dp</dimen>
+    <dimen name="image_product">64dp</dimen>
 
     <!-- Animation Size -->
+    <dimen name="animation_medium">120dp</dimen>
     <dimen name="animation_big">250dp</dimen>
 </resources>
