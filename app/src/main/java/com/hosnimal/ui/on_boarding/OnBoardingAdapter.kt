@@ -13,7 +13,7 @@ class OnBoardingAdapter(private val OnBoardingItem: List<OnBoardingItem>) : Recy
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ViewHolder = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.activity_on_boarding_slider, parent, false))
+    ): ViewHolder = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.adapter_on_boarding_slider, parent, false))
 
     override fun getItemCount(): Int = OnBoardingItem.size
 
