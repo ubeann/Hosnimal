@@ -1,6 +1,7 @@
 package com.hosnimal.fragment
 
 import android.content.Context
+import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -20,6 +21,7 @@ import com.hosnimal.adapter.ProductAdapter
 import com.hosnimal.databinding.FragmentHomeBinding
 import com.hosnimal.model.Product
 import com.hosnimal.preferences.UserPreferences
+import com.hosnimal.ui.detail_product.DetailProductActivity
 import com.hosnimal.ui.main.MainViewModel
 import com.hosnimal.ui.main.MainViewModelFactory
 
@@ -99,8 +101,15 @@ class HomeFragment : Fragment() {
         binding.pharmacyList.adapter = adapter
         adapter.setOnItemClickCallback(object : ProductAdapter.OnItemClickCallback {
             override fun onItemClicked(data: Product) {
-                TODO("Not yet implemented")
+                showDetailProduct(data)
             }
         })
+    }
+
+    private fun showDetailProduct(product: Product) {
+        val intent = Intent(requireContext(), DetailProductActivity::class.java)
+        intent.putExtra(DetailProductActivity.EXTRA_PRODUCT, product)
+        startActivity(intent)
+        requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
     }
 }

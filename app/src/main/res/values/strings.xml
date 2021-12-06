@@ -41,6 +41,7 @@
     <string name="error_password_old">Silahkan masukkan kata sandi lama anda</string>
     <string name="error_password_new">Silahkan masukkan kata sandi baru anda</string>
     <string name="error_password_old_not_match">Kata sandi lama anda tidak sama, silahkan coba lagi</string>
+    <string name="error_product_not_found">Produk tidak ditemukan</string>
 
     <!-- Register -->
     <string name="register_logo">Logo Hosminal</string>
