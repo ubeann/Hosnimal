@@ -42,6 +42,8 @@
     <string name="error_password_new">Silahkan masukkan kata sandi baru anda</string>
     <string name="error_password_old_not_match">Kata sandi lama anda tidak sama, silahkan coba lagi</string>
     <string name="error_product_not_found">Produk tidak ditemukan</string>
+    <string name="error_product_buy_minimum">Minimal pemesanan adalah 1 unit</string>
+    <string name="error_product_buy_maximum">Pesanan melebihi stock yang tersedia</string>
 
     <!-- Register -->
     <string name="register_logo">Logo Hosminal</string>
@@ -74,8 +76,14 @@
     <string name="fragment_pharmacy_title">FARMASI</string>
 
     <!-- Fragment Detail Product of Pharmacy -->
-    <string name="detail_product_btn">Beli Sekarang</string>
+    <string name="detail_product_stock">Tersisa %d barang lagi</string>
     <string name="detail_product_description">Deskripsi</string>
+    <string name="detail_product_btn">Pesan Sekarang</string>
+    <string name="detail_product_dialog_title">Konfirmasi Pemesanan</string>
+    <string name="detail_product_dialog_text">Memesan %1$dx %2$s dengan total biaya sebesar %3$s</string>
+    <string name="detail_product_dialog_positive">Pesan</string>
+    <string name="detail_product_dialog_negative">Batal</string>
+    <string name="detail_product_success">Berhasil memesan %1$dx %2$s</string>
 
     <!-- Fragment Profile -->
     <string name="fragment_profile_title">PROFIL</string>

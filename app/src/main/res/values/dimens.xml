@@ -28,6 +28,7 @@
 
     <!-- Button Size -->
     <dimen name="button_text_medium">36dp</dimen>
+    <dimen name="button_icon_small">28dp</dimen>
     <dimen name="button_icon_medium">36dp</dimen>
     <dimen name="button_icon_big">60dp</dimen>
     <dimen name="button_minimum">150dp</dimen>

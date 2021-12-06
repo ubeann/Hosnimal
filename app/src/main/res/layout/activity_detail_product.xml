@@ -46,7 +46,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@+id/images"
-        app:layout_constraintBottom_toTopOf="@+id/btn_buy"
+        app:layout_constraintBottom_toTopOf="@+id/btn_order"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -97,18 +97,43 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 tools:text="Rp 0000" />
 
+            <include
+                android:id="@+id/detail_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginStart="@dimen/margin_medium"
+                app:layout_constraintTop_toBottomOf="@+id/category"
+                app:layout_constraintStart_toStartOf="parent"
+                layout="@layout/btn_order" />
+
+            <TextView
+                android:id="@+id/stock"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:textSize="@dimen/text_paragraph"
+                android:textColor="@color/textSecondary"
+                android:fontFamily="@font/poppins_regular"
+                app:layout_constraintTop_toBottomOf="@+id/detail_order"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Stock" />
+
             <TextView
                 android:id="@+id/description_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_small"
                 android:layout_marginStart="@dimen/margin_medium"
                 android:layout_marginEnd="@dimen/margin_medium"
                 android:text="@string/detail_product_description"
                 android:textSize="@dimen/text_sub_title"
                 android:textColor="@color/textSecondary"
                 android:fontFamily="@font/poppins_semi_bold"
-                app:layout_constraintTop_toBottomOf="@+id/category"
+                app:layout_constraintTop_toBottomOf="@+id/stock"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -133,7 +158,7 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/btn_buy"
+        android:id="@+id/btn_order"
         android:backgroundTint="@color/secondary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
