@@ -23,4 +23,5 @@
     <color name="errorBackground">#40E33E38</color>
     <color name="errorStatus">#FFC9221C</color>
     <color name="warningStatus">#F9A825</color>
+    <color name="dots_color">#59371721</color>
 </resources>

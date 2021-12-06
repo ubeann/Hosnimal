@@ -72,6 +72,10 @@
     <!-- Fragment Pharmacy -->
     <string name="fragment_pharmacy_title">FARMASI</string>
 
+    <!-- Fragment Detail Product of Pharmacy -->
+    <string name="detail_product_btn">Beli Sekarang</string>
+    <string name="detail_product_description">Deskripsi</string>
+
     <!-- Fragment Profile -->
     <string name="fragment_profile_title">PROFIL</string>
     <string name="fragment_profile_joined">Bergabung pada tanggal %s</string>
