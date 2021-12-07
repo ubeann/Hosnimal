@@ -4,6 +4,7 @@ import android.os.Parcelable
 import androidx.room.*
 import androidx.room.ForeignKey.CASCADE
 import kotlinx.parcelize.Parcelize
+import java.time.OffsetDateTime
 import java.util.*
 
 @Parcelize
@@ -39,5 +40,5 @@ data class Order (
     var qty: Int,
 
     @ColumnInfo(name = "order_at")
-    var orderAt: Date
+    var orderAt: OffsetDateTime
 ) : Parcelable

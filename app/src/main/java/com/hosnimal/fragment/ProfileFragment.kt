@@ -19,6 +19,8 @@ import com.hosnimal.preferences.UserPreferences
 import com.hosnimal.ui.main.MainViewModel
 import com.hosnimal.ui.main.MainViewModelFactory
 import com.hosnimal.ui.register.RegisterActivity
+import java.time.format.DateTimeFormatter
+import java.util.*
 
 class ProfileFragment : Fragment() {
     // Binding
@@ -57,11 +59,11 @@ class ProfileFragment : Fragment() {
         viewModel.getUserSetting().observe(viewLifecycleOwner, { user ->
             with(binding) {
                 name.text = user.name
-                joined.text = String.format(getString(R.string.fragment_profile_joined), user.createdAt)
+                joined.text = String.format(getString(R.string.fragment_profile_joined), user.createdAt.format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale("in", "ID"))), user.createdAt.format(DateTimeFormatter.ofPattern("HH:mm", Locale("in", "ID"))))
                 nameText.setText(user.name)
                 emailText.setText(user.email)
                 phoneText.setText(user.phone)
-                birthdayText.setText(user.birthday)
+                birthdayText.setText(user.birthday.format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale("in", "ID"))))
             }
         })
 

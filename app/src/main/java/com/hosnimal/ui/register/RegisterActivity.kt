@@ -22,6 +22,7 @@ import com.hosnimal.R
 import com.hosnimal.databinding.ActivityRegisterBinding
 import com.hosnimal.preferences.UserPreferences
 import java.text.SimpleDateFormat
+import java.time.*
 import java.util.*
 
 class RegisterActivity : AppCompatActivity() {
@@ -37,6 +38,9 @@ class RegisterActivity : AppCompatActivity() {
 
     // ViewModel
     private lateinit var viewModel: RegisterViewModel
+
+    // Birthday
+    private var birthDayEpoch: Long = 0L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,7 +64,11 @@ class RegisterActivity : AppCompatActivity() {
                 .build()
             picker.show(supportFragmentManager, DATE_PICKER_TAG)
             picker.addOnPositiveButtonClickListener {
-                val dateFormat = SimpleDateFormat("dd MMMM yyyy", Locale("in", "ID"))
+                // Save to data
+                birthDayEpoch = it
+
+                // Preview
+                val dateFormat = SimpleDateFormat("EEEE, dd MMMM yyyy", Locale("in", "ID"))
                 binding.birthday.editText?.setText(dateFormat.format(it))
             }
         }
@@ -93,17 +101,14 @@ class RegisterActivity : AppCompatActivity() {
 
             // Checking
             if (isNameFilled and isEmailFilled and isEmailValid and isPhoneFilled and isBirthDayFilled and isPasswordFilled and !isUserRegistered) {
-                // Create dateFormat
-                val dateFormat = SimpleDateFormat("dd MMMM yyyy", Locale("in", "ID"))
-
                 // Save data to database
                 viewModel.register(
                     userName = binding.fullName.editText?.text.toString(),
                     userEmail = binding.email.editText?.text.toString().lowercase(),
                     userPhone = binding.phone.editText?.text.toString(),
-                    userBirthDay = binding.birthday.editText?.text.toString(),
+                    userBirthDay = OffsetDateTime.ofInstant(Instant.ofEpochMilli(birthDayEpoch), ZoneId.systemDefault()),
                     userPassword = binding.password.editText?.text.toString(),
-                    userCreatedAt = dateFormat.format(Date())
+                    userCreatedAt = OffsetDateTime.now()
                 )
 
                 // Intent to MainActivity

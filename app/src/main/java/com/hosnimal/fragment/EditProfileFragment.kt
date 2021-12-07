@@ -25,6 +25,8 @@ import com.hosnimal.preferences.UserPreferences
 import com.hosnimal.ui.main.MainViewModel
 import com.hosnimal.ui.main.MainViewModelFactory
 import java.text.SimpleDateFormat
+import java.time.*
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class EditProfileFragment : Fragment() {
@@ -43,6 +45,7 @@ class EditProfileFragment : Fragment() {
 
     // User Data
     private lateinit var emailUser: String
+    private var birthDayEpoch: Long = 0L
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -67,9 +70,9 @@ class EditProfileFragment : Fragment() {
             with(binding) {
                 fullName.editText?.setText(user.name)
                 email.editText?.setText(user.email)
-                emailUser = user.email.toString()
+                emailUser = user.email
                 phone.editText?.setText(user.phone)
-                birthday.editText?.setText(user.birthday)
+                birthday.editText?.setText(user.birthday.format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale("in", "ID"))))
             }
         })
 
@@ -91,7 +94,11 @@ class EditProfileFragment : Fragment() {
                 .build()
             picker.show(requireActivity().supportFragmentManager, DATE_PICKER_TAG)
             picker.addOnPositiveButtonClickListener {
-                val dateFormat = SimpleDateFormat("dd MMMM yyyy", Locale("in", "ID"))
+                // Save to data
+                birthDayEpoch = it
+
+                // Preview
+                val dateFormat = SimpleDateFormat("EEEE, dd MMMM yyyy", Locale("in", "ID"))
                 binding.birthday.editText?.setText(dateFormat.format(it))
             }
         }
@@ -120,7 +127,7 @@ class EditProfileFragment : Fragment() {
                         userName = fullName.editText?.text.toString(),
                         userEmail = email.editText?.text.toString(),
                         userPhone = phone.editText?.text.toString(),
-                        userBirthDay = birthday.editText?.text.toString()
+                        userBirthDay = OffsetDateTime.ofInstant(Instant.ofEpochMilli(birthDayEpoch), ZoneId.systemDefault())
                     )
                 }
             }

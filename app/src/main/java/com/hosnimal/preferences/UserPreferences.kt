@@ -5,6 +5,8 @@ import androidx.datastore.preferences.core.*
 import com.hosnimal.model.User
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import java.time.OffsetDateTime
+import java.time.format.DateTimeFormatter
 
 class UserPreferences private constructor(private val dataStore: DataStore<Preferences>) {
     // Setup variable
@@ -33,20 +35,20 @@ class UserPreferences private constructor(private val dataStore: DataStore<Prefe
                 name = preferences[nameKey] ?: "Belum mengisi data",
                 email = preferences[emailKey] ?: "Belum mengisi data",
                 phone = preferences[phoneKey] ?: "Belum mengisi data",
-                birthday = preferences[birthDayKey] ?: "Belum mengisi data",
-                createdAt = preferences[createdKey] ?: "Belum mengisi data"
+                birthday = DateTimeFormatter.ISO_OFFSET_DATE_TIME.parse(preferences[birthDayKey], OffsetDateTime::from),
+                createdAt = DateTimeFormatter.ISO_OFFSET_DATE_TIME.parse(preferences[createdKey], OffsetDateTime::from)
             )
         }
     }
 
-    suspend fun saveUserSetting(userName: String, userEmail: String, userPhone: String, userBirthDay: String, userCreatedAt: String) {
+    suspend fun saveUserSetting(userName: String, userEmail: String, userPhone: String, userBirthDay: OffsetDateTime, userCreatedAt: OffsetDateTime) {
         dataStore.edit { preferences ->
             preferences[userKey] = true
             preferences[nameKey] = userName
             preferences[emailKey] = userEmail
             preferences[phoneKey] = userPhone
-            preferences[birthDayKey] = userBirthDay
-            preferences[createdKey] = userCreatedAt
+            preferences[birthDayKey] = userBirthDay.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
+            preferences[createdKey] = userCreatedAt.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
         }
     }
 

@@ -8,11 +8,12 @@ import com.hosnimal.model.User
 import com.hosnimal.preferences.UserPreferences
 import com.hosnimal.repository.UserRepository
 import kotlinx.coroutines.launch
+import java.time.OffsetDateTime
 
 class RegisterViewModel(application: Application, private val preferences: UserPreferences) : ViewModel() {
     private val mUserRepository: UserRepository = UserRepository(application)
 
-    fun register(userName: String, userEmail: String, userPhone: String, userBirthDay: String, userPassword: String, userCreatedAt: String) {
+    fun register(userName: String, userEmail: String, userPhone: String, userBirthDay: OffsetDateTime, userPassword: String, userCreatedAt: OffsetDateTime) {
         // Save to setting
         viewModelScope.launch {
             preferences.saveUserSetting(userName, userEmail, userPhone, userBirthDay, userCreatedAt)

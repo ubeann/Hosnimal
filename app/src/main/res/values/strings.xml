@@ -95,7 +95,7 @@
 
     <!-- Fragment Profile -->
     <string name="fragment_profile_title">PROFIL</string>
-    <string name="fragment_profile_joined">Bergabung pada tanggal %s</string>
+    <string name="fragment_profile_joined">Bergabung pada hari \n %1$s pukul %2$s</string>
     <string name="fragment_profile_edit">Edit</string>
     <string name="fragment_profile_logout">Keluar</string>
 

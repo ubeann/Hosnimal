@@ -13,7 +13,7 @@ import com.hosnimal.preferences.UserPreferences
 import com.hosnimal.repository.OrderRepository
 import com.hosnimal.repository.ProductRepository
 import com.hosnimal.repository.UserRepository
-import java.util.*
+import java.time.OffsetDateTime
 
 class DetailProductViewModel(application: Application, private val preferences: UserPreferences) : ViewModel()  {
     private val mOrderRepository: OrderRepository = OrderRepository(application)
@@ -35,7 +35,7 @@ class DetailProductViewModel(application: Application, private val preferences: 
             userId = user.id,
             productId = product.id,
             qty = qtyOrder,
-            orderAt = Date()
+            orderAt = OffsetDateTime.now()
         )
 
         // Send Data Order to Database

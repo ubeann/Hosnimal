@@ -12,6 +12,7 @@ import com.hosnimal.repository.OrderRepository
 import com.hosnimal.repository.ProductRepository
 import com.hosnimal.repository.UserRepository
 import kotlinx.coroutines.launch
+import java.time.OffsetDateTime
 
 class MainViewModel(application: Application, private val preferences: UserPreferences) : ViewModel() {
     private val mUserRepository: UserRepository = UserRepository(application)
@@ -38,7 +39,7 @@ class MainViewModel(application: Application, private val preferences: UserPrefe
         }
     }
 
-    fun updateUser(emailOld: String, userName: String, userEmail: String, userPhone: String, userBirthDay: String) {
+    fun updateUser(emailOld: String, userName: String, userEmail: String, userPhone: String, userBirthDay: OffsetDateTime) {
         // Get User Data
         val user = mUserRepository.getUserByEmail(emailOld)
 
@@ -53,7 +54,7 @@ class MainViewModel(application: Application, private val preferences: UserPrefe
 
         // Send data to Setting
         viewModelScope.launch {
-            preferences.saveUserSetting(userName, userEmail, userPhone, userBirthDay, user.createdAt.toString())
+            preferences.saveUserSetting(userName, userEmail, userPhone, userBirthDay, user.createdAt)
         }
 
         // Send notification

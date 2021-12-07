@@ -114,9 +114,7 @@ class DetailProductActivity : AppCompatActivity() {
                     .setNegativeButton(resources.getString(R.string.detail_product_dialog_negative)) { _, _ ->
                     }
                     .setPositiveButton(resources.getString(R.string.detail_product_dialog_positive)) { _, _ ->
-                        user.email?.let { emailUser ->
-                            viewModel.placeOrder(emailUser, productData, qty)
-                        }
+                        viewModel.placeOrder(user.email, productData, qty)
                     }
                     .show()
             }

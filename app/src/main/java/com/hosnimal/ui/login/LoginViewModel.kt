@@ -28,11 +28,11 @@ class LoginViewModel(application: Application, private val preferences: UserPref
         // Save User Data to Setting
         viewModelScope.launch {
             preferences.saveUserSetting(
-                userName = user.name.toString(),
-                userEmail = user.email.toString(),
-                userPhone = user.phone.toString(),
-                userBirthDay = user.birthday.toString(),
-                userCreatedAt = user.createdAt.toString()
+                userName = user.name,
+                userEmail = user.email,
+                userPhone = user.phone,
+                userBirthDay = user.birthday,
+                userCreatedAt = user.createdAt
             )
         }
     }

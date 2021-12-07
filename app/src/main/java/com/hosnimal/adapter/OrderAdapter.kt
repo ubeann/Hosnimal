@@ -15,7 +15,7 @@ import com.hosnimal.R
 import com.hosnimal.model.Product
 import com.hosnimal.model.relational.UserOrder
 import java.text.NumberFormat
-import java.text.SimpleDateFormat
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class OrderAdapter(private val listOrder: List<UserOrder>) : RecyclerView.Adapter<OrderAdapter.ListViewHolder>() {
@@ -52,7 +52,7 @@ class OrderAdapter(private val listOrder: List<UserOrder>) : RecyclerView.Adapte
             .error(R.drawable.ic_round_error_24)
             .into(holder.orderImage)
         holder.orderProduct.text = String.format("%dx %s", listOrder[position].detailOrder.qty, listOrder[position].product.name)
-        holder.orderDate.text = SimpleDateFormat("dd MMMM yyyy", Locale("in", "ID")).format(listOrder[position].detailOrder.orderAt)
+        holder.orderDate.text = listOrder[position].detailOrder.orderAt.format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale("in", "ID")))
         holder.orderPrice.text = NumberFormat.getCurrencyInstance(Locale("in", "ID")).format(listOrder[position].product.price * listOrder[position].detailOrder.qty).toString().replace(",00","")
 
         // Set OnClick Listener

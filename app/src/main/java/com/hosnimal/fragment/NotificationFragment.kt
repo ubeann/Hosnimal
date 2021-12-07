@@ -26,7 +26,7 @@ import com.hosnimal.ui.detail_product.DetailProductActivity
 import com.hosnimal.ui.main.MainViewModel
 import com.hosnimal.ui.main.MainViewModelFactory
 import java.text.NumberFormat
-import java.text.SimpleDateFormat
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class NotificationFragment : Fragment() {
@@ -75,11 +75,9 @@ class NotificationFragment : Fragment() {
 
         // Observe user notification
         viewModel.getUserSetting().observe(viewLifecycleOwner, { userData ->
-            userData.email?.let { emailUser ->
-                viewModel.getUserOrders(emailUser).observe(viewLifecycleOwner, { userOrder ->
-                    showNotification(userOrder)
-                })
-            }
+            viewModel.getUserOrders(userData.email).observe(viewLifecycleOwner, { userOrder ->
+                showNotification(userOrder)
+            })
         })
 
         // Observe system notification
@@ -132,7 +130,7 @@ class NotificationFragment : Fragment() {
     }
 
     private fun cancelOrder(userOrder: UserOrder) {
-        val date = SimpleDateFormat("dd MMMM yyyy", Locale("in", "ID")).format(userOrder.detailOrder.orderAt)
+        val date = userOrder.detailOrder.orderAt.format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale("in", "ID")))
         val pricing = NumberFormat.getCurrencyInstance(Locale("in", "ID")).format(userOrder.product.price * userOrder.detailOrder.qty).toString().replace(",00","")
         MaterialAlertDialogBuilder(requireContext())
             .setTitle(getString(R.string.fragment_notification_dialog_title))
