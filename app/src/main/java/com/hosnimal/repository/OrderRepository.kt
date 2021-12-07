@@ -1,6 +1,7 @@
 package com.hosnimal.repository
 
 import android.app.Application
+import androidx.lifecycle.LiveData
 import com.hosnimal.database.HosnimalDatabase
 import com.hosnimal.database.dao.OrderDao
 import com.hosnimal.model.Order
@@ -18,7 +19,7 @@ class OrderRepository(application: Application) {
         mOrderDao = db.orderDao()
     }
 
-    fun getUserOrders(userId: Int): List<UserOrder> = runBlocking { mOrderDao.getUserOrders(userId) }
+    fun getUserOrders(userId: Int): LiveData<List<UserOrder>> = mOrderDao.getUserOrders(userId)
 
     fun insert(vararg order: Order) {
         executorService.execute { mOrderDao.insert(*order) }

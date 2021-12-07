@@ -87,6 +87,10 @@
     <string name="fragment_notification_title">NOTIFIKASI</string>
     <string name="fragment_notification_empty">Tidak ada pesan untukmu saat ini.\nSilahkan menikmati harimu :)</string>
     <string name="fragment_notification_cancel">Batal</string>
+    <string name="fragment_notification_dialog_title">Konfirmasi Pembatalan Pesanan</string>
+    <string name="fragment_notification_dialog_text">Membatalkan pesanan %1$dx %2$s dengan total biaya sebesar %3$s pada %4$s</string>
+    <string name="fragment_notification_dialog_positive">Batalkan</string>
+    <string name="fragment_notification_dialog_negative">Tutup</string>
 
 
     <!-- Fragment Profile -->

@@ -1,7 +1,6 @@
 package com.hosnimal.ui.detail_product
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -40,7 +39,6 @@ class DetailProductViewModel(application: Application, private val preferences: 
         )
 
         // Send Data Order to Database
-        Log.d("COK", data.userId.toString() + " - " + data.productId.toString())
         mOrderRepository.insert(data)
 
         // Update Stock of Product

@@ -1,5 +1,6 @@
 package com.hosnimal.database.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.hosnimal.model.Order
 import com.hosnimal.model.relational.UserOrder
@@ -14,5 +15,5 @@ interface OrderDao {
 
     @Transaction
     @Query("SELECT * from `order` WHERE user_id = :userId ORDER BY id ASC")
-    suspend fun getUserOrders(userId: Int): List<UserOrder>
+    fun getUserOrders(userId: Int): LiveData<List<UserOrder>>
 }

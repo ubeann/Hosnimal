@@ -6,7 +6,9 @@ import com.hosnimal.helper.AESEncryption
 import com.hosnimal.helper.Event
 import com.hosnimal.model.Product
 import com.hosnimal.model.User
+import com.hosnimal.model.relational.UserOrder
 import com.hosnimal.preferences.UserPreferences
+import com.hosnimal.repository.OrderRepository
 import com.hosnimal.repository.ProductRepository
 import com.hosnimal.repository.UserRepository
 import kotlinx.coroutines.launch
@@ -14,6 +16,7 @@ import kotlinx.coroutines.launch
 class MainViewModel(application: Application, private val preferences: UserPreferences) : ViewModel() {
     private val mUserRepository: UserRepository = UserRepository(application)
     private val mProductRepository: ProductRepository = ProductRepository(application)
+    private val mOrderRepository: OrderRepository = OrderRepository(application)
     private val _notificationText = MutableLiveData<Event<String>>()
     val notificationText: LiveData<Event<String>> = _notificationText
 
@@ -74,4 +77,27 @@ class MainViewModel(application: Application, private val preferences: UserPrefe
     fun getTopProduct(qty: Int): LiveData<List<Product>> = mProductRepository.getTopProducts(qty)
 
     fun getAllProduct(): LiveData<List<Product>> = mProductRepository.getAllProducts()
+
+    fun getUserOrders(email: String): LiveData<List<UserOrder>> {
+        // Get User Data
+        val user = mUserRepository.getUserByEmail(email)
+
+        // Return User Orders
+        return mOrderRepository.getUserOrders(user.id)
+    }
+
+    fun cancelOrder(userOrder: UserOrder) {
+        // Save data of product
+        val qty = userOrder.detailOrder.qty
+        val product = userOrder.product
+
+        // Delete Order on Database
+        mOrderRepository.delete(userOrder.detailOrder)
+
+        // Update stock of product
+        mProductRepository.updateStock(product, qty, true)
+
+        // Send notification
+        _notificationText.value = Event("Berhasil membatalkan pesanan ${qty}x ${product.name}")
+    }
 }
