@@ -3,17 +3,28 @@ package com.hosnimal.database
 import android.content.Context
 import androidx.room.*
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.hosnimal.database.dao.OrderDao
 import com.hosnimal.database.dao.ProductDao
 import com.hosnimal.database.dao.UserDao
+import com.hosnimal.model.Order
 import com.hosnimal.model.Product
 import com.hosnimal.model.User
 import java.util.concurrent.Executors
 
-@Database(version = 1, entities = [User::class, Product::class], exportSchema = true)
+@Database(
+    version = 1,
+    entities = [
+        User::class,
+        Product::class,
+        Order::class
+   ],
+    exportSchema = true
+)
 @TypeConverters(Converters::class)
 abstract class HosnimalDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
     abstract fun productDao(): ProductDao
+    abstract fun orderDao(): OrderDao
 
     companion object {
         @Volatile

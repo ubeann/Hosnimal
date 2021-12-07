@@ -41,6 +41,7 @@
     <string name="error_password_old">Silahkan masukkan kata sandi lama anda</string>
     <string name="error_password_new">Silahkan masukkan kata sandi baru anda</string>
     <string name="error_password_old_not_match">Kata sandi lama anda tidak sama, silahkan coba lagi</string>
+    <string name="error_product_empty">Stok Produk Telah Habis</string>
     <string name="error_product_not_found">Produk tidak ditemukan</string>
     <string name="error_product_buy_minimum">Minimal pemesanan adalah 1 unit</string>
     <string name="error_product_buy_maximum">Pesanan melebihi stock yang tersedia</string>
@@ -77,6 +78,7 @@
 
     <!-- Fragment Detail Product of Pharmacy -->
     <string name="detail_product_stock">Tersisa %d barang lagi</string>
+    <string name="detail_product_stock_empty">Stock barang telah habis</string>
     <string name="detail_product_description">Deskripsi</string>
     <string name="detail_product_btn">Pesan Sekarang</string>
     <string name="detail_product_dialog_title">Konfirmasi Pemesanan</string>
