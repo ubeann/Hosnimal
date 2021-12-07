@@ -4,6 +4,7 @@ import androidx.room.TypeConverter
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.time.OffsetDateTime
+import java.time.OffsetTime
 import java.time.format.DateTimeFormatter
 import java.util.*
 
@@ -36,6 +37,20 @@ class Converters {
         @JvmStatic
         fun saveOffsetDateTime(date: OffsetDateTime?): String? {
             return date?.format(formatDateTime)
+        }
+
+        @TypeConverter
+        @JvmStatic
+        fun restoreOffsetTime(value: String?): OffsetTime? {
+            return value?.let {
+                return formatTime.parse(value, OffsetTime::from)
+            }
+        }
+
+        @TypeConverter
+        @JvmStatic
+        fun saveOffsetTime(date: OffsetTime?): String? {
+            return date?.format(formatTime)
         }
     }
 }

@@ -57,18 +57,12 @@ class PharmacyFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Set list product pharmacy
-        binding.pharmacyList.layoutManager = object : LinearLayoutManager(requireContext()) {
-            override fun canScrollVertically(): Boolean = false
-        }
+        binding.pharmacyList.layoutManager = LinearLayoutManager(requireContext())
         binding.pharmacyList.setHasFixedSize(true)
         if (requireActivity().applicationContext.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            binding.pharmacyList.layoutManager = object : GridLayoutManager(requireContext(), 2) {
-                override fun canScrollVertically(): Boolean = false
-            }
+            binding.pharmacyList.layoutManager = GridLayoutManager(requireContext(), 2)
         } else {
-            binding.pharmacyList.layoutManager = object : LinearLayoutManager(requireContext())  {
-                override fun canScrollVertically(): Boolean = false
-            }
+            binding.pharmacyList.layoutManager = LinearLayoutManager(requireContext())
         }
 
 

@@ -5,6 +5,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
+import java.time.OffsetTime
 
 @Parcelize
 @Entity(tableName = "hospital")
@@ -17,16 +18,16 @@ data class Hospital (
     var name: String,
 
     @ColumnInfo(name = "open")
-    var open: String = "Time",
+    var open: OffsetTime,
 
     @ColumnInfo(name = "close")
-    var close: String,
+    var close: OffsetTime,
 
     @ColumnInfo(name = "location")
     var location: String,
 
     @ColumnInfo(name = "instagram")
-    var instagram: String?,
+    var instagram: String? = null,
 
     @ColumnInfo(name = "x")
     var x: Double,

@@ -67,9 +67,7 @@ class NotificationFragment : Fragment() {
 
         // Set list of notification
         with(binding.notificationList) {
-            layoutManager = object : LinearLayoutManager(requireContext()) {
-                override fun canScrollVertically(): Boolean = false
-            }
+            layoutManager = LinearLayoutManager(requireContext())
             setHasFixedSize(true)
         }
 

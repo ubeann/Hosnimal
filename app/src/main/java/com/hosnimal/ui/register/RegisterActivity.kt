@@ -55,11 +55,19 @@ class RegisterActivity : AppCompatActivity() {
 
         // Setting DatePicker Dialog
         binding.btnDatePicker.setOnClickListener {
+            val calendar = Calendar.getInstance()
+            val end = LocalDateTime
+                .of(calendar.get(Calendar.YEAR) - 17, calendar.get(Calendar.MONTH) - 0, calendar.get(Calendar.DAY_OF_MONTH) - 0, 0, 0, 0,)
+                .atZone(ZoneId.ofOffset("UTC", ZoneOffset.UTC))
+                .toInstant()
+                .toEpochMilli()
             val constraintsBuilder = CalendarConstraints.Builder()
-                .setValidator(DateValidatorPointBackward.now())
+                .setEnd(end)
+                .setOpenAt(end)
+                .setValidator(DateValidatorPointBackward.before(end))
             val picker = MaterialDatePicker.Builder.datePicker()
                 .setTitleText(getString(R.string.input_birthday_date_picker))
-                .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
+                .setSelection(end)
                 .setCalendarConstraints(constraintsBuilder.build())
                 .build()
             picker.show(supportFragmentManager, DATE_PICKER_TAG)
