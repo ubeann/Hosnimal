@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="splash_description">Logo Aplikasi</string>
-    <string name="onBoarding_title">Title</string>
-    <string name="onBoarding_description">Description</string>
     <string name="onBoarding_btn_next">NEXT</string>
     <string name="register_logo">Logo Hosminal</string>
     <string name="register_tag_line">Selamat Datang di Hosnimal</string>
