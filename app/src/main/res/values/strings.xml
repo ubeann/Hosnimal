@@ -83,6 +83,12 @@
     <string name="detail_product_dialog_positive">Pesan</string>
     <string name="detail_product_dialog_negative">Batal</string>
 
+    <!-- Fragment Notification -->
+    <string name="fragment_notification_title">NOTIFIKASI</string>
+    <string name="fragment_notification_empty">Tidak ada pesan untukmu saat ini.\nSilahkan menikmati harimu :)</string>
+    <string name="fragment_notification_cancel">Batal</string>
+
+
     <!-- Fragment Profile -->
     <string name="fragment_profile_title">PROFIL</string>
     <string name="fragment_profile_joined">Bergabung pada tanggal %s</string>

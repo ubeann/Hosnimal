@@ -65,6 +65,11 @@ class HomeFragment : Fragment() {
             binding.name.text = String.format(getString(R.string.fragment_home_title), user.name)
         })
 
+        // Setting button notification
+        binding.notification.setOnClickListener {
+            it.findNavController().navigate(R.id.action_home_fragment_to_notificationFragment)
+        }
+
         // Set list product pharmacy
         binding.pharmacyList.layoutManager = object : LinearLayoutManager(requireContext()) {
             override fun canScrollVertically(): Boolean = false

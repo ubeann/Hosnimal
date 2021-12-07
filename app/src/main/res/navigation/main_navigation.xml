@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_home_fragment_to_pharmacyFragment"
             app:destination="@id/pharmacyFragment" />
+        <action
+            android:id="@+id/action_home_fragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
     </fragment>
 
     <fragment
@@ -47,4 +50,9 @@
         android:name="com.hosnimal.fragment.PharmacyFragment"
         android:label="fragment_pharmacy"
         tools:layout="@layout/fragment_pharmacy" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.hosnimal.fragment.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
 </navigation>

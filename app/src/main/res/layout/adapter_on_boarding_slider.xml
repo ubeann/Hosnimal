@@ -14,7 +14,6 @@
         android:layout_marginStart="@dimen/margin_small"
         android:layout_marginEnd="@dimen/margin_small"
         app:lottie_autoPlay="true"
-        app:lottie_rawRes="@raw/on_boarding_1_animal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

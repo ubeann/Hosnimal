@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Margin Size -->
+    <dimen name="margin_super_tiny">2dp</dimen>
     <dimen name="margin_tiny">4dp</dimen>
     <dimen name="margin_small">8dp</dimen>
     <dimen name="margin_medium">16dp</dimen>
@@ -31,6 +32,7 @@
     <dimen name="button_icon_small">28dp</dimen>
     <dimen name="button_icon_medium">36dp</dimen>
     <dimen name="button_icon_big">60dp</dimen>
+    <dimen name="button_icon_ultra">80dp</dimen>
     <dimen name="button_minimum">150dp</dimen>
     <dimen name="button_medium">175dp</dimen>
 
