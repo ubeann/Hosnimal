@@ -17,8 +17,10 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hosnimal.App
 import com.hosnimal.R
+import com.hosnimal.adapter.HospitalAdapter
 import com.hosnimal.adapter.ProductAdapter
 import com.hosnimal.databinding.FragmentHomeBinding
+import com.hosnimal.model.Hospital
 import com.hosnimal.model.Product
 import com.hosnimal.preferences.UserPreferences
 import com.hosnimal.ui.detail_product.DetailProductActivity
@@ -70,18 +72,37 @@ class HomeFragment : Fragment() {
             it.findNavController().navigate(R.id.action_home_fragment_to_notificationFragment)
         }
 
-        // Set list product pharmacy
-        binding.pharmacyList.layoutManager = object : LinearLayoutManager(requireContext()) {
-            override fun canScrollVertically(): Boolean = false
-        }
-        binding.pharmacyList.setHasFixedSize(true)
-        if (requireActivity().applicationContext.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            binding.pharmacyList.layoutManager = object : GridLayoutManager(requireContext(), 2) {
-                override fun canScrollVertically(): Boolean = false
+        // Set list product pharmacy and list hospital
+        with(binding) {
+            with(pharmacyList) {
+                layoutManager = if (requireActivity().applicationContext.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE)
+                    object : GridLayoutManager(requireContext(), 2)  {
+                        override fun canScrollVertically(): Boolean {
+                            return false
+                        }
+                    }
+                else
+                    object : LinearLayoutManager(requireContext()) {
+                        override fun canScrollVertically(): Boolean {
+                            return false
+                        }
+                    }
+                setHasFixedSize(true)
             }
-        } else {
-            binding.pharmacyList.layoutManager = object : LinearLayoutManager(requireContext())  {
-                override fun canScrollVertically(): Boolean = false
+            with(hospitalList) {
+                layoutManager = if (requireActivity().applicationContext.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE)
+                   object : GridLayoutManager(requireContext(), 2)  {
+                       override fun canScrollVertically(): Boolean {
+                           return false
+                       }
+                   }
+                else
+                   object : LinearLayoutManager(requireContext()) {
+                       override fun canScrollVertically(): Boolean {
+                           return false
+                       }
+                   }
+                setHasFixedSize(true)
             }
         }
 
@@ -94,6 +115,11 @@ class HomeFragment : Fragment() {
         binding.pharmacySeeAll.setOnClickListener {
             it.findNavController().navigate(R.id.action_home_fragment_to_pharmacyFragment)
         }
+
+        // Observe hospital
+        viewModel.getTopHospital(totalItem).observe(viewLifecycleOwner, { listHospital ->
+            showHospital(listHospital)
+        })
     }
 
     override fun onDestroy() {
@@ -116,5 +142,19 @@ class HomeFragment : Fragment() {
         intent.putExtra(DetailProductActivity.EXTRA_PRODUCT, product)
         startActivity(intent)
         requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+    }
+
+    private fun showHospital(listHospital: List<Hospital>) {
+        val adapter = HospitalAdapter(listHospital)
+        binding.hospitalList.adapter = adapter
+        adapter.setOnItemClickCallback(object : HospitalAdapter.OnItemClickCallback {
+            override fun onItemClicked(data: Hospital) {
+                showDetailHospital(data)
+            }
+        })
+    }
+
+    private fun showDetailHospital(hospital: Hospital) {
+
     }
 }

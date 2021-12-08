@@ -74,7 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_small"
             android:layout_marginEnd="@dimen/margin_medium"
-            android:text="@string/fragment_home_pharmacy_btn"
+            android:text="@string/fragment_home_btn_see_all"
             android:textSize="@dimen/text_paragraph"
             android:textColor="@color/textCaption"
             android:fontFamily="@font/poppins_semi_bold"
@@ -94,139 +94,47 @@
             app:layout_constraintEnd_toEndOf="parent"
             tools:listitem="@layout/card_product" />
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:gravity="center_horizontal"-->
-<!--            android:orientation="vertical"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/fragment_home_pharmacy"-->
-<!--            android:layout_marginTop="12dp"-->
-<!--            android:layout_marginBottom="12dp">-->
-<!--            <LinearLayout-->
-<!--                android:orientation="horizontal"-->
-<!--                android:gravity="center_vertical"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content">-->
-<!--                <TextView-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="@string/fragment_home_clinic"-->
-<!--                    android:textSize="18sp"-->
-<!--                    android:textColor="@color/textPrimary"-->
-<!--                    android:fontFamily="@font/poppins_semi_bold"/>-->
-<!--                <Button-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="@string/fragment_home_pharmacy_btn"-->
-<!--                    android:textSize="12sp"-->
-<!--                    android:textColor="@color/textCaption"-->
-<!--                    android:fontFamily="@font/poppins_semi_bold"-->
-<!--                    android:letterSpacing="0"-->
-<!--                    style="@style/Widget.MaterialComponents.Button.TextButton"/>-->
-<!--            </LinearLayout>-->
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:orientation="horizontal"-->
-<!--                android:gravity="center_vertical"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/fragment_map_title"-->
-<!--                android:layout_marginBottom="8dp">-->
-<!--                <ImageView-->
-<!--                    android:layout_width="64dp"-->
-<!--                    android:layout_height="64dp"-->
-<!--                    android:src="@drawable/hospital_1_rounded"-->
-<!--                    android:layout_marginEnd="4dp"-->
-<!--                    android:contentDescription="@string/fragment_home_clinic_image"/>-->
-<!--                <LinearLayout-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="vertical"-->
-<!--                    android:layout_marginStart="4dp"-->
-<!--                    android:layout_marginEnd="4dp">-->
-<!--                    <TextView-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="@string/fragment_map_detail_1_name"-->
-<!--                        android:textSize="16sp"-->
-<!--                        android:textColor="@color/textSecondary"-->
-<!--                        android:fontFamily="@font/poppins_semi_bold"/>-->
-<!--                    <TextView-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="@string/fragment_map_detail_1_location"-->
-<!--                        android:textSize="12sp"-->
-<!--                        android:layout_marginEnd="4dp"-->
-<!--                        android:textColor="@color/textSecondary"-->
-<!--                        android:fontFamily="@font/montserrat_regular"/>-->
-<!--                </LinearLayout>-->
-<!--                <TextView-->
-<!--                    android:layout_width="52dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:padding="4dp"-->
-<!--                    android:text="@string/fragment_map_status_1"-->
-<!--                    android:textSize="12sp"-->
-<!--                    android:textColor="@color/successStatus"-->
-<!--                    android:textAlignment="center"-->
-<!--                    android:background="@drawable/status_success_rounded"-->
-<!--                    android:fontFamily="@font/poppins_semi_bold"/>-->
-<!--            </LinearLayout>-->
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:orientation="horizontal"-->
-<!--                android:gravity="center_vertical"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/fragment_map_list_1"-->
-<!--                android:layout_marginTop="8dp">-->
-<!--                <ImageView-->
-<!--                    android:layout_width="64dp"-->
-<!--                    android:layout_height="64dp"-->
-<!--                    android:src="@drawable/hospital_2_rounded"-->
-<!--                    android:layout_marginEnd="4dp"-->
-<!--                    android:contentDescription="@string/fragment_home_clinic_image"/>-->
-<!--                <LinearLayout-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="vertical"-->
-<!--                    android:layout_marginStart="4dp"-->
-<!--                    android:layout_marginEnd="4dp">-->
-<!--                    <TextView-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="@string/fragment_map_detail_2_name"-->
-<!--                        android:textSize="16sp"-->
-<!--                        android:textColor="@color/textSecondary"-->
-<!--                        android:fontFamily="@font/poppins_semi_bold"-->
-<!--                        android:layout_marginBottom="4dp"/>-->
-<!--                    <TextView-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="@string/fragment_map_detail_2_location"-->
-<!--                        android:textSize="12sp"-->
-<!--                        android:layout_marginEnd="4dp"-->
-<!--                        android:textColor="@color/textSecondary"-->
-<!--                        android:fontFamily="@font/montserrat_regular"/>-->
-<!--                </LinearLayout>-->
-<!--                <TextView-->
-<!--                    android:layout_width="52dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:padding="4dp"-->
-<!--                    android:text="@string/fragment_map_status_2"-->
-<!--                    android:textSize="12sp"-->
-<!--                    android:textColor="@color/errorStatus"-->
-<!--                    android:textAlignment="center"-->
-<!--                    android:background="@drawable/status_error_rounded"-->
-<!--                    android:fontFamily="@font/poppins_semi_bold"/>-->
-<!--            </LinearLayout>-->
-<!--        </LinearLayout>-->
+
+        <TextView
+            android:id="@+id/hospital"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:text="@string/fragment_home_hospital_title"
+            android:textSize="@dimen/text_sub_title"
+            android:textColor="@color/textPrimary"
+            android:fontFamily="@font/poppins_semi_bold"
+            app:layout_constraintTop_toTopOf="@+id/hospital_see_all"
+            app:layout_constraintBottom_toBottomOf="@+id/hospital_see_all"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/hospital_see_all" />
+
+        <Button
+            android:id="@+id/hospital_see_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:text="@string/fragment_home_btn_see_all"
+            android:textSize="@dimen/text_paragraph"
+            android:textColor="@color/textCaption"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:letterSpacing="0"
+            app:layout_constraintTop_toBottomOf="@+id/pharmacy_list"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/Widget.MaterialComponents.Button.TextButton" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/hospital_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_small"
+            app:layout_constraintTop_toBottomOf="@+id/hospital_see_all"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:listitem="@layout/card_hospital" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

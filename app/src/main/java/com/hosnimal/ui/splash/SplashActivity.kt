@@ -25,6 +25,7 @@ class SplashActivity : AppCompatActivity() {
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = App.DATA_STORE_KEY)
     private var isOnBoardingCleared: Boolean = false
     private var isUserAlreadyLogin: Boolean = false
+    private var isUserRegistered: Boolean = false
     private lateinit var onBoardingPreferences: OnBoardingPreferences
     private lateinit var userPreferences: UserPreferences
     private lateinit var viewModel: SplashViewModel
@@ -36,7 +37,7 @@ class SplashActivity : AppCompatActivity() {
         // Set preferences and viewModel
         onBoardingPreferences = OnBoardingPreferences.getInstance(dataStore)
         userPreferences = UserPreferences.getInstance(dataStore)
-        viewModel = ViewModelProvider(this, SplashViewModelFactory(onBoardingPreferences, userPreferences))[SplashViewModel::class.java]
+        viewModel = ViewModelProvider(this, SplashViewModelFactory(application, onBoardingPreferences, userPreferences))[SplashViewModel::class.java]
 
         // Observe if OnBoarding is cleared
         viewModel.getOnBoardingSetting().observe(this, {
@@ -46,7 +47,15 @@ class SplashActivity : AppCompatActivity() {
         // Observe if User already login
         viewModel.getUserLogin().observe(this, {
             isUserAlreadyLogin = it
+
+            // Observe if User is registered
+            if (isUserAlreadyLogin) {
+                viewModel.getUserSetting().observe(this, { user ->
+                    isUserRegistered = viewModel.isRegistered(user.email) and user.email.isNotEmpty()
+                })
+            }
         })
+
 
         val splashThread: Thread = object : Thread() {
             override fun run() {
@@ -65,7 +74,7 @@ class SplashActivity : AppCompatActivity() {
     private fun whichIntent() {
         val intent = Intent(this@SplashActivity,
             when {
-                isUserAlreadyLogin -> MainActivity::class.java
+                isUserAlreadyLogin and isUserRegistered -> MainActivity::class.java
                 isOnBoardingCleared -> RegisterActivity::class.java
                 else -> OnBoardingActivity::class.java
             }

@@ -43,9 +43,6 @@ class NotificationFragment : Fragment() {
     // ViewModel
     private lateinit var viewModel: MainViewModel
 
-    // Data User
-    private lateinit var user: User
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -63,7 +60,6 @@ class NotificationFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
         // Set list of notification
         with(binding.notificationList) {

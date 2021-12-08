@@ -55,19 +55,19 @@ class DetailProductActivity : AppCompatActivity() {
         // Observe User Data
         viewModel.getUserSetting().observe(this, {
             user = it
+
+            // Check user login
+            if (!viewModel.isRegistered(it.email) and it.email.isNotEmpty()) {
+                val intent = Intent(this@DetailProductActivity, RegisterActivity::class.java)
+                startActivity(intent)
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                finish()
+            }
         })
 
         // Prepare View Binding
         _binding = ActivityDetailProductBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        // Check user login
-        if (viewModel.isRegistered(user.email)) {
-            val intent = Intent(this@DetailProductActivity, RegisterActivity::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-            finish()
-        }
 
         // Set images of product
         product?.let { productData ->

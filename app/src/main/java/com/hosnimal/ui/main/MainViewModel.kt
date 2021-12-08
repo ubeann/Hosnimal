@@ -4,10 +4,12 @@ import android.app.Application
 import androidx.lifecycle.*
 import com.hosnimal.helper.AESEncryption
 import com.hosnimal.helper.Event
+import com.hosnimal.model.Hospital
 import com.hosnimal.model.Product
 import com.hosnimal.model.User
 import com.hosnimal.model.relational.UserOrder
 import com.hosnimal.preferences.UserPreferences
+import com.hosnimal.repository.HospitalRepository
 import com.hosnimal.repository.OrderRepository
 import com.hosnimal.repository.ProductRepository
 import com.hosnimal.repository.UserRepository
@@ -18,6 +20,7 @@ class MainViewModel(application: Application, private val preferences: UserPrefe
     private val mUserRepository: UserRepository = UserRepository(application)
     private val mProductRepository: ProductRepository = ProductRepository(application)
     private val mOrderRepository: OrderRepository = OrderRepository(application)
+    private val mHospitalRepository: HospitalRepository = HospitalRepository(application)
     private val _notificationText = MutableLiveData<Event<String>>()
     val notificationText: LiveData<Event<String>> = _notificationText
 
@@ -101,4 +104,6 @@ class MainViewModel(application: Application, private val preferences: UserPrefe
         // Send notification
         _notificationText.value = Event("Berhasil membatalkan pesanan ${qty}x ${product.name}")
     }
+
+    fun getTopHospital(qty: Int): LiveData<List<Hospital>> = mHospitalRepository.getTopHospital(qty)
 }

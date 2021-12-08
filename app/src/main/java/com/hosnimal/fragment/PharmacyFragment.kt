@@ -57,14 +57,10 @@ class PharmacyFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Set list product pharmacy
-        binding.pharmacyList.layoutManager = LinearLayoutManager(requireContext())
-        binding.pharmacyList.setHasFixedSize(true)
-        if (requireActivity().applicationContext.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            binding.pharmacyList.layoutManager = GridLayoutManager(requireContext(), 2)
-        } else {
-            binding.pharmacyList.layoutManager = LinearLayoutManager(requireContext())
+        with(binding.pharmacyList) {
+            layoutManager = if (requireActivity().applicationContext.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) GridLayoutManager(requireContext(), 2) else LinearLayoutManager(requireContext())
+            setHasFixedSize(true)
         }
-
 
         // Observe product pharmacy
         viewModel.getAllProduct().observe(viewLifecycleOwner, { listProduct ->

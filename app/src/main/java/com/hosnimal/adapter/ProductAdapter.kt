@@ -60,5 +60,4 @@ class ProductAdapter(private val listProduct: List<Product>) : RecyclerView.Adap
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
         this.onItemClickCallback = onItemClickCallback
     }
-
 }

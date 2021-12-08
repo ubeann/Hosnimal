@@ -9,6 +9,7 @@
     <dimen name="margin_ultra">32dp</dimen>
 
     <!-- Padding Size -->
+    <dimen name="padding_tiny">4dp</dimen>
     <dimen name="padding_small">8dp</dimen>
     <dimen name="padding_input">12dp</dimen>
     <dimen name="padding_medium">16dp</dimen>
