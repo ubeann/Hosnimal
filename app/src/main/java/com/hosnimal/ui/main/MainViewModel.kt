@@ -106,4 +106,6 @@ class MainViewModel(application: Application, private val preferences: UserPrefe
     }
 
     fun getTopHospital(qty: Int): LiveData<List<Hospital>> = mHospitalRepository.getTopHospital(qty)
+
+    fun getAllHospital(): LiveData<List<Hospital>> = mHospitalRepository.getAllHospital()
 }

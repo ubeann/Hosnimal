@@ -21,6 +21,8 @@ class HospitalRepository (application: Application) {
 
     fun getTopHospital(qty: Int): LiveData<List<Hospital>> = mHospitalDao.getTopHospitals(qty)
 
+    fun getHospital(id: Int): LiveData<Hospital> = mHospitalDao.getHospital(id)
+
     fun insert(vararg hospital: Hospital) {
         executorService.execute { mHospitalDao.insert(*hospital) }
     }

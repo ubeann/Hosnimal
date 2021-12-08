@@ -3,129 +3,94 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@color/background"
     android:fillViewport="true"
-    tools:context=".MapFragment">
+    tools:context="fragment.MapFragment">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="32dp"
-        android:paddingLeft="32dp"
-        android:paddingBottom="16dp"
-        android:paddingRight="32dp">
+        android:paddingBottom="@dimen/margin_medium" >
+
         <TextView
-            android:id="@+id/fragment_map_title"
+            android:id="@+id/reservation_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/fragment_map_title"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:text="@string/fragment_map_reservation_title"
             android:textColor="@color/textPrimary"
-            android:textSize="18sp"
-            android:letterSpacing="0.15"
+            android:textSize="@dimen/text_title"
             android:fontFamily="@font/poppins_bold"
-            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginBottom="12dp"/>
-        <LinearLayout
-            android:id="@+id/fragment_map_list_1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/empty_animation"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/animation_medium"
+            android:layout_marginTop="@dimen/margin_small"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/reservation_title"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_map_title"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp">
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@drawable/hospital_1_rounded"
-                android:layout_marginEnd="4dp"
-                android:contentDescription="@string/fragment_home_clinic_image"/>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="4dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/fragment_map_detail_1_name"
-                    android:textSize="12sp"
-                    android:textColor="@color/textSecondary"
-                    android:fontFamily="@font/poppins_semi_bold"
-                    android:layout_marginBottom="4dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/fragment_map_detail_1_location"
-                    android:textSize="12sp"
-                    android:textColor="@color/textSecondary"
-                    android:fontFamily="@font/montserrat_regular"/>
-            </LinearLayout>
-            <TextView
-                android:layout_width="52dp"
-                android:layout_height="wrap_content"
-                android:padding="4dp"
-                android:text="@string/fragment_map_status_1"
-                android:textSize="12sp"
-                android:textColor="@color/successStatus"
-                android:textAlignment="center"
-                android:background="@drawable/status_success_rounded"
-                android:fontFamily="@font/poppins_semi_bold"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
             app:layout_constraintEnd_toEndOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_rawRes="@raw/fragment_notification" />
+
+        <TextView
+            android:id="@+id/empty_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:text="@string/fragment_map_reservation_empty"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_sub_title"
+            android:textColor="@color/textSecondary"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/empty_animation"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_map_list_1"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp">
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@drawable/hospital_2_rounded"
-                android:layout_marginEnd="4dp"
-                android:contentDescription="@string/fragment_home_clinic_image"/>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="4dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/fragment_map_detail_2_name"
-                    android:textSize="12sp"
-                    android:textColor="@color/textSecondary"
-                    android:fontFamily="@font/poppins_semi_bold"
-                    android:layout_marginBottom="4dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/fragment_map_detail_2_location"
-                    android:textSize="12sp"
-                    android:textColor="@color/textSecondary"
-                    android:fontFamily="@font/montserrat_regular"/>
-            </LinearLayout>
-            <TextView
-                android:layout_width="52dp"
-                android:layout_height="wrap_content"
-                android:padding="4dp"
-                android:text="@string/fragment_map_status_2"
-                android:textSize="12sp"
-                android:textColor="@color/errorStatus"
-                android:textAlignment="center"
-                android:background="@drawable/status_error_rounded"
-                android:fontFamily="@font/poppins_semi_bold"/>
-        </LinearLayout>
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/reservation_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_small"
+            app:layout_constraintTop_toBottomOf="@+id/empty_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/hospital_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:text="@string/fragment_map_hospital_title"
+            android:textColor="@color/textPrimary"
+            android:textSize="@dimen/text_title"
+            android:fontFamily="@font/poppins_bold"
+            app:layout_constraintTop_toBottomOf="@+id/reservation_list"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/hospital_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_small"
+            app:layout_constraintTop_toBottomOf="@+id/hospital_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:listitem="@layout/card_hospital" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>

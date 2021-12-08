@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/maps_fragment"
-        android:name="com.hosnimal.MapFragment"
+        android:name="com.hosnimal.fragment.MapFragment"
         android:label="@string/navigation_bar_maps"
         tools:layout="@layout/fragment_map">
         <action

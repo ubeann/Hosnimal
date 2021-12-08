@@ -16,4 +16,7 @@ interface HospitalDao {
 
     @Query("SELECT * from hospital ORDER BY time(close) DESC LIMIT :qty")
     fun getTopHospitals(qty: Int): LiveData<List<Hospital>>
+
+    @Query("SELECT * from hospital WHERE id = :id")
+    fun getHospital(id: Int): LiveData<Hospital>
 }

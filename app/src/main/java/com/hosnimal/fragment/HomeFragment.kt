@@ -120,6 +120,10 @@ class HomeFragment : Fragment() {
         viewModel.getTopHospital(totalItem).observe(viewLifecycleOwner, { listHospital ->
             showHospital(listHospital)
         })
+
+        binding.hospitalSeeAll.setOnClickListener {
+            it.findNavController().navigate(R.id.action_home_fragment_to_maps_fragment)
+        }
     }
 
     override fun onDestroy() {

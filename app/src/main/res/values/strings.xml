@@ -93,6 +93,11 @@
     <string name="fragment_notification_dialog_positive">Batalkan</string>
     <string name="fragment_notification_dialog_negative">Tutup</string>
 
+    <!-- Fragment Map or Hospital -->
+    <string name="fragment_map_hospital_title">RUMAH SAKIT</string>
+    <string name="fragment_map_reservation_title">RESERVASI</string>
+    <string name="fragment_map_reservation_empty">Kamu belum melakukan reservasi, ayo pilih pada rumah sakit dibawah…</string>
+
 
     <!-- Fragment Profile -->
     <string name="fragment_profile_title">PROFIL</string>
@@ -111,12 +116,4 @@
     <string name="navigation_bar_home">Beranda</string>
     <string name="navigation_bar_maps">Map</string>
     <string name="navigation_bar_profile">Profil</string>
-
-    <string name="fragment_map_title">MAP</string>
-    <string name="fragment_map_detail_1_name">RS Universitas Airlangga</string>
-    <string name="fragment_map_detail_1_location">Jl. Airlangga No.4 – 6, Airlangga, Kec. Gubeng, SBY</string>
-    <string name="fragment_map_status_1">Buka</string>
-    <string name="fragment_map_status_2">Tutup</string>
-    <string name="fragment_map_detail_2_name">RS Bhayangkara Surabaya</string>
-    <string name="fragment_map_detail_2_location">Jl. Ahmad Yani No.116, Kota SBY, Jawa Timur 60231</string>
 </resources>
