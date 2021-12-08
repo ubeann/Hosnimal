@@ -24,6 +24,8 @@ class DetailProductViewModel(application: Application, private val preferences: 
 
     fun getUserSetting(): LiveData<User> = preferences.getUserSetting().asLiveData()
 
+    fun isRegistered(email: String): Boolean = mUserRepository.isUserRegistered(email)
+
     fun getProduct(id: Int): LiveData<Product> = mProductRepository.getProduct(id)
 
     fun placeOrder(emailUser: String, product: Product, qtyOrder: Int) {

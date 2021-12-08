@@ -42,6 +42,7 @@ abstract class HosnimalDatabase : RoomDatabase() {
                 synchronized(HosnimalDatabase::class.java) {
                     INSTANCE = Room.databaseBuilder(context.applicationContext,
                         HosnimalDatabase::class.java, "hosnimal_database.db")
+                        .fallbackToDestructiveMigration()
                         .addCallback(prePopulate)
                         .build()
                 }

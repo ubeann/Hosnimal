@@ -1,6 +1,7 @@
 package com.hosnimal.ui.detail_product
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -17,6 +18,7 @@ import com.hosnimal.databinding.ActivityDetailProductBinding
 import com.hosnimal.model.Product
 import com.hosnimal.model.User
 import com.hosnimal.preferences.UserPreferences
+import com.hosnimal.ui.register.RegisterActivity
 import java.text.NumberFormat
 import java.util.*
 
@@ -40,8 +42,6 @@ class DetailProductActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        _binding = ActivityDetailProductBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
         // Receive data
         val product = intent.getParcelableExtra<Product>(EXTRA_PRODUCT)
@@ -56,6 +56,18 @@ class DetailProductActivity : AppCompatActivity() {
         viewModel.getUserSetting().observe(this, {
             user = it
         })
+
+        // Prepare View Binding
+        _binding = ActivityDetailProductBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        // Check user login
+        if (viewModel.isRegistered(user.email)) {
+            val intent = Intent(this@DetailProductActivity, RegisterActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+            finish()
+        }
 
         // Set images of product
         product?.let { productData ->
