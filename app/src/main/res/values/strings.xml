@@ -22,6 +22,10 @@
     <string name="input_phone">Nomor HP</string>
     <string name="input_birthday">Tanggal Lahir</string>
     <string name="input_birthday_date_picker">Pilih Tanggal Lahir</string>
+    <string name="input_reservation_day">Tanggal Reservasi</string>
+    <string name="input_reservation_day_picker">Pilih Tanggal Reservasi</string>
+    <string name="input_reservation_time">Waktu Reservasi</string>
+    <string name="input_reservation_time_picker">Pilih Waktu Reservasi</string>
     <string name="input_password">Kata Sandi</string>
     <string name="input_password_old">Kata Sandi Lama</string>
     <string name="input_password_new">Kata Sandi Baru</string>
@@ -43,6 +47,7 @@
     <string name="error_product_not_found">Produk tidak ditemukan</string>
     <string name="error_product_buy_minimum">Minimal pemesanan adalah 1 unit</string>
     <string name="error_product_buy_maximum">Pesanan melebihi stock yang tersedia</string>
+    <string name="error_reservation_closed">Reservasi Telah Ditutup</string>
 
     <!-- Register -->
     <string name="register_logo">Logo Hosminal</string>
@@ -75,7 +80,7 @@
     <!-- Fragment Pharmacy -->
     <string name="fragment_pharmacy_title">FARMASI</string>
 
-    <!-- Fragment Detail Product of Pharmacy -->
+    <!-- Detail Product of Pharmacy -->
     <string name="detail_product_stock">Tersisa %d barang lagi</string>
     <string name="detail_product_description">Deskripsi</string>
     <string name="detail_product_btn">Pesan Sekarang</string>
@@ -98,6 +103,10 @@
     <string name="fragment_map_reservation_title">RESERVASI</string>
     <string name="fragment_map_reservation_empty">Kamu belum melakukan reservasi, ayo pilih pada rumah sakit dibawah…</string>
 
+    <!-- Detail Map or Hospital -->
+    <string name="detail_hospital_reservation">Daftar Reservasi</string>
+    <string name="detail_hospital_reservation_btn">Reservasi Sekarang</string>
+    <string name="detail_hospital_map">Map</string>
 
     <!-- Fragment Profile -->
     <string name="fragment_profile_title">PROFIL</string>

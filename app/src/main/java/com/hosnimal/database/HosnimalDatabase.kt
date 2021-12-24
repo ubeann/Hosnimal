@@ -263,8 +263,8 @@ abstract class HosnimalDatabase : RoomDatabase() {
             Hospital(
                 id = 8,
                 name = "Harmoni Pet Care - Klinik Hewan Surabaya",
-                open = OffsetTime.of(8,0,0,0, zoneOffset),
-                close = OffsetTime.of(16,0,0,0, zoneOffset),
+                open = OffsetTime.of(2,0,0,0, zoneOffset),
+                close = OffsetTime.of(4,0,0,0, zoneOffset),
                 location = "Jl. Gayungsari Timur III Blok MGJ No.3, Menanggal, Gayungan, Kota SBY, 60234",
                 instagram = "https://www.instagram.com/harmonipetcare/",
                 x = -7.3369348,

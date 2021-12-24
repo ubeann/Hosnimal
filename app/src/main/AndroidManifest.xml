@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hosnimal">
         <activity
+            android:name=".ui.detail_hospital.DetailHospitalActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.detail_product.DetailProductActivity"
             android:exported="true" />
         <activity

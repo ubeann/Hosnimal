@@ -1,6 +1,7 @@
 package com.hosnimal.fragment
 
 import android.content.Context
+import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -19,6 +20,7 @@ import com.hosnimal.adapter.HospitalAdapter
 import com.hosnimal.databinding.FragmentMapBinding
 import com.hosnimal.model.Hospital
 import com.hosnimal.preferences.UserPreferences
+import com.hosnimal.ui.detail_hospital.DetailHospitalActivity
 import com.hosnimal.ui.main.MainViewModel
 import com.hosnimal.ui.main.MainViewModelFactory
 
@@ -84,6 +86,9 @@ class MapFragment : Fragment() {
     }
 
     private fun showDetailHospital(hospital: Hospital) {
-
+        val intent = Intent(requireContext(), DetailHospitalActivity::class.java)
+        intent.putExtra(DetailHospitalActivity.EXTRA_HOSPITAL, hospital)
+        startActivity(intent)
+        requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
     }
 }

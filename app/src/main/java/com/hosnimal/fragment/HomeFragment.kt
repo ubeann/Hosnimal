@@ -23,6 +23,7 @@ import com.hosnimal.databinding.FragmentHomeBinding
 import com.hosnimal.model.Hospital
 import com.hosnimal.model.Product
 import com.hosnimal.preferences.UserPreferences
+import com.hosnimal.ui.detail_hospital.DetailHospitalActivity
 import com.hosnimal.ui.detail_product.DetailProductActivity
 import com.hosnimal.ui.main.MainViewModel
 import com.hosnimal.ui.main.MainViewModelFactory
@@ -159,6 +160,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun showDetailHospital(hospital: Hospital) {
-
+        val intent = Intent(requireContext(), DetailHospitalActivity::class.java)
+        intent.putExtra(DetailHospitalActivity.EXTRA_HOSPITAL, hospital)
+        startActivity(intent)
+        requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
     }
 }
