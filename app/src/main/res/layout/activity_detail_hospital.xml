@@ -24,7 +24,7 @@
         app:dotsSize="@dimen/margin_small"
         app:dotsSpacing="@dimen/margin_tiny"
         app:dotsWidthFactor="5"
-        app:progressMode="true"
+        app:progressMode="false"
         app:selectedDotColor="@color/primary"
         android:layout_marginBottom="@dimen/margin_medium"
         app:layout_constraintBottom_toBottomOf="@+id/images"

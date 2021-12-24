@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
@@ -67,8 +68,8 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
 
     // Room (Android Jetpack)
-    implementation 'androidx.room:room-ktx:2.3.0'
-    kapt 'androidx.room:room-compiler:2.3.0'
+    implementation 'androidx.room:room-ktx:2.4.0'
+    kapt 'androidx.room:room-compiler:2.4.0'
 
     // ViewPager2 (Android Jetpack)
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
@@ -81,6 +82,9 @@ dependencies {
 
     // Gson
     implementation 'com.google.code.gson:gson:2.8.9'
+
+    // Google Play Services
+    implementation 'com.google.android.gms:play-services-maps:18.0.1'
 
     // Lottie Animations
     implementation 'com.airbnb.android:lottie:4.1.0'

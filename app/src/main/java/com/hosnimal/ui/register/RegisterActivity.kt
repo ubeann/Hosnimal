@@ -57,7 +57,7 @@ class RegisterActivity : AppCompatActivity() {
         binding.btnDatePicker.setOnClickListener {
             val calendar = Calendar.getInstance()
             val end = LocalDateTime
-                .of(calendar.get(Calendar.YEAR) - 17, calendar.get(Calendar.MONTH) - 0, calendar.get(Calendar.DAY_OF_MONTH) - 0, 0, 0, 0,)
+                .of(calendar.get(Calendar.YEAR) - 17, calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.DAY_OF_MONTH) - 0, 0, 0, 0,)
                 .atZone(ZoneId.ofOffset("UTC", ZoneOffset.UTC))
                 .toInstant()
                 .toEpochMilli()

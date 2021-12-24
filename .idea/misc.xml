@@ -14,6 +14,7 @@
         <entry key="..\:/Android/Kuliah/MobPrak/Hosnimal/app/src/main/res/drawable/btn_round_primary.xml" value="0.3828125" />
         <entry key="..\:/Android/Kuliah/MobPrak/Hosnimal/app/src/main/res/drawable/btn_round_success.xml" value="0.3828125" />
         <entry key="..\:/Android/Kuliah/MobPrak/Hosnimal/app/src/main/res/drawable/btn_round_transparant.xml" value="0.3828125" />
+        <entry key="..\:/Android/Kuliah/MobPrak/Hosnimal/app/src/main/res/drawable/btn_round_transparent.xml" value="0.3828125" />
         <entry key="..\:/Android/Kuliah/MobPrak/Hosnimal/app/src/main/res/drawable/btn_seccondary_rounded.xml" value="0.3828125" />
         <entry key="..\:/Android/Kuliah/MobPrak/Hosnimal/app/src/main/res/drawable/caption_rounded.xml" value="0.3828125" />
         <entry key="..\:/Android/Kuliah/MobPrak/Hosnimal/app/src/main/res/drawable/ic_round_chevron_left_24.xml" value="0.3828125" />
@@ -25,6 +26,7 @@
         <entry key="..\:/Android/Kuliah/MobPrak/Hosnimal/app/src/main/res/layout/activity_detail_product.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/Kuliah/MobPrak/Hosnimal/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/Kuliah/MobPrak/Hosnimal/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Android/Kuliah/MobPrak/Hosnimal/app/src/main/res/layout/activity_maps.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/Kuliah/MobPrak/Hosnimal/app/src/main/res/layout/activity_on_boarding.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/Kuliah/MobPrak/Hosnimal/app/src/main/res/layout/activity_on_boarding_slider.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/Kuliah/MobPrak/Hosnimal/app/src/main/res/layout/activity_register.xml" value="0.33" />
@@ -44,6 +46,7 @@
         <entry key="..\:/Android/Kuliah/MobPrak/Hosnimal/app/src/main/res/layout/fragment_notification.xml" value="0.35260416666666666" />
         <entry key="..\:/Android/Kuliah/MobPrak/Hosnimal/app/src/main/res/layout/fragment_pharmacy.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/Kuliah/MobPrak/Hosnimal/app/src/main/res/layout/fragment_profile.xml" value="0.35260416666666666" />
+        <entry key="..\:/Android/Kuliah/MobPrak/Hosnimal/app/src/main/res/layout/navbar.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/Kuliah/MobPrak/Hosnimal/app/src/main/res/layout/welcome_card.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/Kuliah/MobPrak/Hosnimal/app/src/main/res/menu/navigation_bar.xml" value="0.36666666666666664" />
       </map>
