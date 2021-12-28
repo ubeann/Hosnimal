@@ -10,6 +10,8 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.datepicker.*
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
 import com.hosnimal.App
@@ -41,7 +43,7 @@ class DetailHospitalActivity : AppCompatActivity() {
     private lateinit var viewModel: DetailHospitalViewModel
 
     // Data Reservation
-    private var dayEpoch: Long = 0L
+    private var dayEpoch: Long = OffsetDateTime.now().toInstant().toEpochMilli()
     private var timeEpoch: OffsetTime = OffsetTime.now()
     private lateinit var user: User
 
@@ -74,8 +76,8 @@ class DetailHospitalActivity : AppCompatActivity() {
         _binding = ActivityDetailHospitalBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Set images of hospital
         hospital?.let { hospitalData ->
+            // Set images of hospital
             val adapter = ImageSliderAdapter(hospitalData.images)
             binding.images.adapter = adapter
             if (adapter.itemCount > 1) {
@@ -83,21 +85,42 @@ class DetailHospitalActivity : AppCompatActivity() {
             } else {
                 binding.dotsIndicator.visibility = View.GONE
             }
+
+            // Observe Data Hospital
+            viewModel.getHospital(hospitalData.id).observe(this, { data ->
+                setOpenClosed(data.open, data.close)
+            })
+
+            // Setting Reservation Button
+            binding.btnReservationOpen.setOnClickListener {
+                // Check are datetime is free
+                if (viewModel.isReservationFilled(hospitalData.id, OffsetDateTime.ofInstant(Instant.ofEpochMilli(dayEpoch), ZoneId.systemDefault()), timeEpoch)) {
+                    showSnackBar(getString(R.string.error_reservation_filled))
+                } else {
+                    // Format
+                    val dateFormat = SimpleDateFormat("EEEE, dd MMMM yyyy", Locale("in", "ID"))
+                    val timeFormat = DateTimeFormatter.ofPattern("HH:mm", Locale("in", "ID"))
+
+                    // Alert Dialog
+                    MaterialAlertDialogBuilder(it.context)
+                        .setTitle(resources.getString(R.string.detail_hospital_dialog_title))
+                        .setMessage(String.format(getString(R.string.detail_hospital_dialog_text), dateFormat.format(dayEpoch), timeEpoch.format(timeFormat), timeEpoch.plusHours(1L).format(timeFormat)))
+                        .setNegativeButton(resources.getString(R.string.detail_hospital_dialog_negative)) { _, _ ->
+                        }
+                        .setPositiveButton(resources.getString(R.string.detail_hospital_dialog_positive)) { _, _ ->
+                            viewModel.placeReservation(user.email, hospitalData, OffsetDateTime.ofInstant(Instant.ofEpochMilli(dayEpoch), ZoneId.systemDefault()), timeEpoch)
+                        }
+                        .show()
+                }
+            }
         }
 
         // Set Data Hospital
         with(binding) {
             name.text = hospital?.name
             location.text = hospital?.location
-            day.editText?.setText(OffsetDateTime.now().format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale("in", "ID"))))
-            time.editText?.setText(OffsetTime.now().format(DateTimeFormatter.ofPattern("HH:mm", Locale("in", "ID"))))
-        }
-
-        // Observe Data Hospital
-        hospital?.let { hospitalData ->
-            viewModel.getHospital(hospitalData.id).observe(this, { data ->
-                setOpenClosed(data.open, data.close)
-            })
+            day.editText?.setText(SimpleDateFormat("EEEE, dd MMMM yyyy", Locale("in", "ID")).format(dayEpoch))
+            time.editText?.setText(timeEpoch.format(DateTimeFormatter.ofPattern("HH:mm", Locale("in", "ID"))))
         }
 
         // Date Picker Click Listener
@@ -117,11 +140,11 @@ class DetailHospitalActivity : AppCompatActivity() {
             val constraintsBuilder = CalendarConstraints.Builder()
                 .setStart(start)
                 .setEnd(end)
-                .setOpenAt(start)
+                .setOpenAt(dayEpoch)
                 .setValidator(CompositeDateValidator.allOf(listOf(DateValidatorPointForward.from(start), DateValidatorPointBackward.before(end))))
             val picker = MaterialDatePicker.Builder.datePicker()
                 .setTitleText(getString(R.string.input_reservation_day_picker))
-                .setSelection(start)
+                .setSelection(dayEpoch)
                 .setCalendarConstraints(constraintsBuilder.build())
                 .build()
             picker.show(this.supportFragmentManager, DATE_PICKER_TAG)
@@ -137,11 +160,10 @@ class DetailHospitalActivity : AppCompatActivity() {
 
         // Time Picker Click Listener
         binding.btnTimePicker.setOnClickListener {
-            val calendar = Calendar.getInstance()
             val picker = MaterialTimePicker.Builder()
                 .setTimeFormat(TimeFormat.CLOCK_24H)
-                .setHour(calendar.get(Calendar.HOUR))
-                .setMinute(calendar.get(Calendar.MINUTE))
+                .setHour(timeEpoch.hour)
+                .setMinute(timeEpoch.minute)
                 .setTitleText(getString(R.string.input_reservation_time_picker))
                 .build()
             picker.show(this.supportFragmentManager, TIME_PICKER_TAG)
@@ -163,6 +185,13 @@ class DetailHospitalActivity : AppCompatActivity() {
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
             }
         }
+
+        // Observe Notification
+        viewModel.notificationText.observe(this, {
+            it.getContentIfNotHandled()?.let { text ->
+                showSnackBar(text)
+            }
+        })
 
         // Setting Button Back
         binding.btnBack.setOnClickListener {
@@ -187,6 +216,14 @@ class DetailHospitalActivity : AppCompatActivity() {
             time.visibility = if (isOpen) View.VISIBLE else View.GONE
             btnTimePicker.visibility = if (isOpen) View.VISIBLE else View.GONE
         }
+    }
+
+    private fun showSnackBar(text: String) {
+        Snackbar.make(
+            binding.root,
+            text,
+            Snackbar.LENGTH_SHORT
+        ).show()
     }
 
     companion object {

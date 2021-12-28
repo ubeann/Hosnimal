@@ -48,6 +48,7 @@
     <string name="error_product_buy_minimum">Minimal pemesanan adalah 1 unit</string>
     <string name="error_product_buy_maximum">Pesanan melebihi stock yang tersedia</string>
     <string name="error_reservation_closed">Reservasi Telah Ditutup</string>
+    <string name="error_reservation_filled">Gagal melakukan reservasi, karena telah didahului oleh seseorang</string>
 
     <!-- Register -->
     <string name="register_logo">Logo Hosminal</string>
@@ -107,6 +108,10 @@
     <string name="detail_hospital_reservation">Daftar Reservasi</string>
     <string name="detail_hospital_reservation_btn">Reservasi Sekarang</string>
     <string name="detail_hospital_map">Map</string>
+    <string name="detail_hospital_dialog_title">Konfirmasi Reservasi</string>
+    <string name="detail_hospital_dialog_text">Reservasi pada %1$s pukul %2$s hingga %3$s</string>
+    <string name="detail_hospital_dialog_positive">Reservasi</string>
+    <string name="detail_hospital_dialog_negative">Batal</string>
 
     <!-- Fragment Profile -->
     <string name="fragment_profile_title">PROFIL</string>

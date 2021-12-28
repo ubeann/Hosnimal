@@ -3,14 +3,8 @@ package com.hosnimal.database
 import android.content.Context
 import androidx.room.*
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.hosnimal.database.dao.HospitalDao
-import com.hosnimal.database.dao.OrderDao
-import com.hosnimal.database.dao.ProductDao
-import com.hosnimal.database.dao.UserDao
-import com.hosnimal.model.Hospital
-import com.hosnimal.model.Order
-import com.hosnimal.model.Product
-import com.hosnimal.model.User
+import com.hosnimal.database.dao.*
+import com.hosnimal.model.*
 import java.time.OffsetTime
 import java.time.ZoneOffset
 import java.util.concurrent.Executors
@@ -21,7 +15,8 @@ import java.util.concurrent.Executors
         User::class,
         Product::class,
         Order::class,
-        Hospital::class
+        Hospital::class,
+        Reservation::class
    ],
     exportSchema = true
 )
@@ -31,6 +26,7 @@ abstract class HosnimalDatabase : RoomDatabase() {
     abstract fun productDao(): ProductDao
     abstract fun orderDao(): OrderDao
     abstract fun hospitalDao(): HospitalDao
+    abstract fun reservationDao(): ReservationDao
 
     companion object {
         @Volatile
