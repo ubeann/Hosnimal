@@ -18,8 +18,6 @@ class UserRepository(application: Application) {
         mUserDao = db.userDao()
     }
 
-    fun getAllUsers(): LiveData<List<User>> = mUserDao.getAllUsers()
-
     fun getUserByEmail(email: String): User = runBlocking { mUserDao.getUserByEmail(email) }
 
     fun isUserRegistered(email: String): Boolean = runBlocking { mUserDao.isUserRegistered(email) }

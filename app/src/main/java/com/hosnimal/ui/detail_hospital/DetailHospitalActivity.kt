@@ -9,6 +9,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.datepicker.*
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
@@ -17,9 +18,11 @@ import com.google.android.material.timepicker.TimeFormat
 import com.hosnimal.App
 import com.hosnimal.R
 import com.hosnimal.adapter.ImageSliderAdapter
+import com.hosnimal.adapter.ReservationHospitalAdapter
 import com.hosnimal.databinding.ActivityDetailHospitalBinding
 import com.hosnimal.model.Hospital
 import com.hosnimal.model.User
+import com.hosnimal.model.relational.HospitalReservation
 import com.hosnimal.preferences.UserPreferences
 import com.hosnimal.ui.maps.MapsActivity
 import com.hosnimal.ui.register.RegisterActivity
@@ -46,6 +49,7 @@ class DetailHospitalActivity : AppCompatActivity() {
     private var dayEpoch: Long = OffsetDateTime.now().toInstant().toEpochMilli()
     private var timeEpoch: OffsetTime = OffsetTime.now()
     private lateinit var user: User
+    private var userId: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,11 +74,20 @@ class DetailHospitalActivity : AppCompatActivity() {
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
                 finish()
             }
+
+            // Get User Id
+            userId = if (it.email.isNotEmpty()) viewModel.getUserIdByEmail(it.email) else 0
         })
 
         // Prepare View Binding
         _binding = ActivityDetailHospitalBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Set list of reservation
+        with(binding.reservationList) {
+            layoutManager = LinearLayoutManager(this@DetailHospitalActivity)
+            setHasFixedSize(true)
+        }
 
         hospital?.let { hospitalData ->
             // Set images of hospital
@@ -113,6 +126,11 @@ class DetailHospitalActivity : AppCompatActivity() {
                         .show()
                 }
             }
+
+            // Observe reservation
+            viewModel.getHospitalReservation(hospitalData.id).observe(this, { reservation ->
+                showReservation(reservation)
+            })
         }
 
         // Set Data Hospital
@@ -224,6 +242,41 @@ class DetailHospitalActivity : AppCompatActivity() {
             text,
             Snackbar.LENGTH_SHORT
         ).show()
+    }
+
+    private fun showReservation(listReservation: List<HospitalReservation>) {
+        with(binding) {
+            reservationList.visibility = if (listReservation.isEmpty()) View.GONE else View.VISIBLE
+            reservationEmpty.visibility = if (listReservation.isEmpty()) View.VISIBLE else View.GONE
+        }
+        if (listReservation.isNotEmpty()) {
+            val adapterReservation = ReservationHospitalAdapter(listReservation, userId)
+            binding.reservationList.adapter = adapterReservation
+            adapterReservation.setOnClickCallback(
+                object : ReservationHospitalAdapter.OnBtnClickCallback {
+                    override fun onBtnClicked(data: HospitalReservation) {
+                        cancelReservation(data)
+                    }
+                }
+            )
+        }
+    }
+
+    private fun cancelReservation(reservation: HospitalReservation) {
+        // Format
+        val dateFormat = DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale("in", "ID"))
+        val timeFormat = DateTimeFormatter.ofPattern("HH:mm", Locale("in", "ID"))
+
+        // Alert Dialog
+        MaterialAlertDialogBuilder(this@DetailHospitalActivity)
+            .setTitle(resources.getString(R.string.fragment_map_cancel_dialog_title))
+            .setMessage(String.format(getString(R.string.fragment_map_cancel_dialog_text), reservation.detailReservation.start.format(dateFormat), reservation.detailReservation.start.format(timeFormat), reservation.detailReservation.end.format(timeFormat)))
+            .setNegativeButton(resources.getString(R.string.fragment_map_cancel_dialog_negative)) { _, _ ->
+            }
+            .setPositiveButton(resources.getString(R.string.fragment_map_cancel_dialog_positive)) { _, _ ->
+                viewModel.cancelReservation(reservation)
+            }
+            .show()
     }
 
     companion object {

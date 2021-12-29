@@ -204,6 +204,34 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
+            <TextView
+                android:id="@+id/reservation_empty"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginHorizontal="@dimen/margin_medium"
+                android:text="@string/detail_hospital_reservation_empty"
+                android:textAlignment="center"
+                android:textSize="@dimen/text_paragraph"
+                android:textColor="@color/textCaption"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/reservation_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/reservation_list"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_small"
+                app:layout_constraintTop_toBottomOf="@+id/reservation_empty"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="visible"
+                tools:listitem="@layout/card_reservation" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

@@ -103,15 +103,21 @@
     <string name="fragment_map_hospital_title">RUMAH SAKIT</string>
     <string name="fragment_map_reservation_title">RESERVASI</string>
     <string name="fragment_map_reservation_empty">Kamu belum melakukan reservasi, ayo pilih pada rumah sakit dibawah…</string>
+    <string name="fragment_map_cancel_dialog_title">Konfirmasi Pembatalan Reservasi</string>
+    <string name="fragment_map_cancel_dialog_text">Membatalkan reservasi pada %1$s pukul %2$s hingga %3$s</string>
+    <string name="fragment_map_cancel_dialog_negative">Tutup</string>
+    <string name="fragment_map_cancel_dialog_positive">Batalkan</string>
 
     <!-- Detail Map or Hospital -->
     <string name="detail_hospital_reservation">Daftar Reservasi</string>
     <string name="detail_hospital_reservation_btn">Reservasi Sekarang</string>
+    <string name="detail_hospital_reservation_empty">Belum ada yang melakukan reservasi, ayo reservasi sekarang</string>
+    <string name="detail_hospital_reservation_time_divider">-</string>
     <string name="detail_hospital_map">Map</string>
     <string name="detail_hospital_dialog_title">Konfirmasi Reservasi</string>
     <string name="detail_hospital_dialog_text">Reservasi pada %1$s pukul %2$s hingga %3$s</string>
-    <string name="detail_hospital_dialog_positive">Reservasi</string>
     <string name="detail_hospital_dialog_negative">Batal</string>
+    <string name="detail_hospital_dialog_positive">Reservasi</string>
 
     <!-- Fragment Profile -->
     <string name="fragment_profile_title">PROFIL</string>
