@@ -6,7 +6,7 @@
     android:layout_height="wrap_content" >
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/order"
+        android:id="@+id/reservation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_small"
@@ -129,7 +129,7 @@
         app:iconGravity="textTop"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/order"
+        app:layout_constraintStart_toEndOf="@+id/reservation"
         app:layout_constraintEnd_toEndOf="parent"
         style="@style/Widget.MaterialComponents.Button.Icon" />
 

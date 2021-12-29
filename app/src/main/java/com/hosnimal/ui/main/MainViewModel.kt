@@ -8,23 +8,26 @@ import com.hosnimal.model.Hospital
 import com.hosnimal.model.Product
 import com.hosnimal.model.User
 import com.hosnimal.model.relational.UserOrder
+import com.hosnimal.model.relational.UserReservation
 import com.hosnimal.preferences.UserPreferences
-import com.hosnimal.repository.HospitalRepository
-import com.hosnimal.repository.OrderRepository
-import com.hosnimal.repository.ProductRepository
-import com.hosnimal.repository.UserRepository
+import com.hosnimal.repository.*
 import kotlinx.coroutines.launch
 import java.time.OffsetDateTime
+import java.time.format.DateTimeFormatter
+import java.util.*
 
 class MainViewModel(application: Application, private val preferences: UserPreferences) : ViewModel() {
     private val mUserRepository: UserRepository = UserRepository(application)
     private val mProductRepository: ProductRepository = ProductRepository(application)
     private val mOrderRepository: OrderRepository = OrderRepository(application)
     private val mHospitalRepository: HospitalRepository = HospitalRepository(application)
+    private val mReservationRepository: ReservationRepository = ReservationRepository(application)
     private val _notificationText = MutableLiveData<Event<String>>()
     val notificationText: LiveData<Event<String>> = _notificationText
 
     fun getUserSetting(): LiveData<User> = preferences.getUserSetting().asLiveData()
+
+    fun getUserIdByEmail(email: String): Int = mUserRepository.getUserByEmail(email).id
 
     fun isRegistered(email: String): Boolean = mUserRepository.isUserRegistered(email)
 
@@ -108,4 +111,18 @@ class MainViewModel(application: Application, private val preferences: UserPrefe
     fun getTopHospital(qty: Int): LiveData<List<Hospital>> = mHospitalRepository.getTopHospital(qty)
 
     fun getAllHospital(): LiveData<List<Hospital>> = mHospitalRepository.getAllHospital()
+
+    fun getUserReservation(userId: Int): LiveData<List<UserReservation>> = mReservationRepository.getUserReservations(userId)
+
+    fun cancelReservation(reservation: UserReservation) {
+        // Save data of reservation
+        val start = reservation.detailReservation.start
+        val end = reservation.detailReservation.end
+
+        // Delete Reservation on Database
+        mReservationRepository.delete(reservation.detailReservation)
+
+        // Send notification
+        _notificationText.value = Event("Berhasil membatalkan reservasi ${reservation.hospital.name} pada ${start.format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy HH:mm", Locale("in", "ID")))} sampai pukul ${end.format(DateTimeFormatter.ofPattern("HH:mm", Locale("in", "ID")))}")
+    }
 }

@@ -128,8 +128,8 @@ class DetailHospitalActivity : AppCompatActivity() {
             }
 
             // Observe reservation
-            viewModel.getHospitalReservation(hospitalData.id).observe(this, { reservation ->
-                showReservation(reservation)
+            viewModel.getHospitalReservation(hospitalData.id).observe(this, { listReservation ->
+                showReservation(listReservation)
             })
         }
 
