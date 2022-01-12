@@ -62,92 +62,92 @@ abstract class HosnimalDatabase : RoomDatabase() {
             Product(
                 id = 1,
                 name = "COLIBACT 100 gr Serbuk",
-                category = "TEST",
+                category = "Antibiotik",
                 description = "Antibiotik sulfa trimetroprim obat hewan dengan formula khusus COLIBACT sangat efektif terhadap bakteri Gram-positif dan Gram-negatif seperti: Staphylococcus spp., Streptococcus spp., Bacillus anthrads, E. coli, Corynebacterium pyogenes, Haemophilus spp., Pasteurella spp., Klebsiella spp., Salmonella spp., Bordetella bronchiseptica, dll.",
                 price = 43000,
                 stock = 57,
-                images =  listOf("https://assets.pikiran-rakyat.com/crop/0x155:1920x1235/x/photo/2021/08/01/658666320.jpg")
+                images =  listOf("https://drive.google.com/uc?id=13wMYNJCGjgoso6fdNQoBmeWFgg04T7B7")
             ),
             Product(
                 id = 2,
                 name = "Intertrim LA",
-                category = "TEST",
+                category = "Obat Infeksi",
                 description = "Mengobati infeksi saluran pernafasan, pencernaan dan perkencingan. Kombinasi Sulfadoxine dan Trimethoprim bekerja secara sinergis potensiasi, bersifat bakterisidal terhadap bakteri gram negatif dan gram positif seperti E. coli, Haemophilus, Pasteurella, Salmonella, Staphylococcus, Streptococcus spp. dan parasit darah seperti Leucocytozoon spp. Sulfadoxine dan Trimethoprim menghambat sintesis asam folat bakteri dan parasit darah dengan cara yang berbeda sehingga menghasilkan hambatan ganda.",
                 price = 115000,
                 stock = 34,
-                images = listOf("https://assets.pikiran-rakyat.com/crop/0x155:1920x1235/x/photo/2021/08/01/658666320.jpg")
+                images = listOf("https://drive.google.com/uc?id=1-NPhLF1VnsnHMOAxMDEl5J-3MgDiGj66")
             ),
             Product(
                 id = 3,
                 name = "MEDOXY LA 100 ml",
-                category = "TEST",
+                category = "Antibiotik",
                 description = "MEDOXY-LA adalah obat suntik yang mengandung Oxytetracycline yang bekerja menghambat sintesis protein bakteri, mempunyai spektrum kerja yang luas dan efektif terhadap sebagian besar bakteri Gram (-) dan Gram (+) termasuk yang telah resisten terhadap Penicillin.",
                 price = 98800,
                 stock = 42,
-                images = listOf("https://assets.pikiran-rakyat.com/crop/0x155:1920x1235/x/photo/2021/08/01/658666320.jpg")
+                images = listOf("https://drive.google.com/uc?id=1fGcf7OMR7QyITkN4v0I4vYMlaZevQWHk")
             ),
             Product(
                 id = 4,
                 name = "AMINOVIT serbuk 250 gram",
-                category = "TEST",
+                category = "Vitamin",
                 description = "Aminovit Serbuk larut air mengandung vitamin, asam amino dan elektrolit dengan komposisi yang seimbang. Berfungsi meningkatkan produksi dan kualitas telur. AMINOVIT merupakan sediaan berbentuk serbuk larut air berwarna coklat muda dengan kandungan 11 vitamin, 2 asam amino dan 4 elektrolit untuk ayam petelur.",
                 price = 45450,
                 stock = 29,
-                images = listOf("https://assets.pikiran-rakyat.com/crop/0x155:1920x1235/x/photo/2021/08/01/658666320.jpg")
+                images = listOf("https://drive.google.com/uc?id=1qhWusMj68QLnYa33Ajf0snEmD-AuMEU3")
             ),
             Product(
                 id = 5,
                 name = "Drontal Dog",
-                category = "TEST",
+                category = "Obat Cacing",
                 description = "Obat cacing untuk anjing semua ras per tablet. Obat cacing untuk anjing beraroma daging sapi. Dapat diberikan langsung maupun dicampur dengan makanan. Untuk pembasmian rutin diberikan setiap 3 bulan sekali, untuk infeksi cacing gelang berat,bisa diulang setelah 14 hari. Drontal Plus Flavour Dog membasmi ascarida, cacing tambang, cacing cambuk, cacing pita, giardia.",
                 price = 19000,
                 stock = 72,
-                images = listOf("https://assets.pikiran-rakyat.com/crop/0x155:1920x1235/x/photo/2021/08/01/658666320.jpg")
+                images = listOf("https://drive.google.com/uc?id=10p3oSVZnDqtUifq_X810PL8A60aUjqyM")
             ),
             Product(
                 id = 6,
                 name = "Penstrep 45",
-                category = "TEST",
+                category = "Antibiotik",
                 description = "Tiap gram mengandung procaine penicilin g : 400.000 iu, streptomycine, sulfate : 500mg. efektif mengobati mastitis yang di sebabkan streptococci, staphylococci, clostridium tetani infeksi, abses bacterial, erysiphelas infeksi pada babi, dan pneumonia infeksi bakterial.",
                 price = 50000,
                 stock = 62,
-                images = listOf("https://assets.pikiran-rakyat.com/crop/0x155:1920x1235/x/photo/2021/08/01/658666320.jpg")
+                images = listOf("https://drive.google.com/uc?id=1tXS5Sp6AIHtavG474HiJEZOXj2TgERmG")
             ),
             Product(
                 id = 7,
                 name = "Flumax Vetplus 9 ml",
-                category = "TEST",
+                category = "Obat Flu",
                 description = "Suplemen nutrisi lezat yang mengandung kombinasi unik asam amino, ekstrak tumbuhan, vitamin dan mineral untuk membantu mendukung kesehatan saluran pernapasan pada kucing. Diformulasikan secara khusus untuk memberi kucing Anda nutrisi yang mereka butuhkan untuk gaya hidup sehat dan bahagia. Flumax membantu mengobati masalah pernafasan dan mengurangi resiko pernafasan pada kucing dan menghindari flu, hidung atau mata berair, nafsu makan berkurang, batuk atau bersin-bersin.",
                 price = 29000,
                 stock = 7,
-                images = listOf("https://assets.pikiran-rakyat.com/crop/0x155:1920x1235/x/photo/2021/08/01/658666320.jpg")
+                images = listOf("https://drive.google.com/uc?id=17ji2fdIvS43Yz7WGXCnzgheyGFMyzbHl")
             ),
             Product(
                 id = 8,
                 name = "Albusmin 10 Kapsul",
-                category = "TEST",
+                category = "Vitamin",
                 description = "Albusmin, ekstrak ikan gabus yang bisa membantu mempercepat masa pemulihan pasca operasi pada hewan kesayangan. Kandungan albumino yang terdapat dalam albusmin sudah melalui penelitian dapat membantu proses pemulihan lebih cepat seperti pasca operasi mayor atau minor.Dapat juga mendukung proses pemulihan kucing dengan kasus FLUTD kencing darah akibat kristal-kristal yang mengiritasi dinding saluran kemih, memulihkan stamina dan daya tahan tubuh hewan peliharaan.",
                 price = 64000,
                 stock = 17,
-                images = listOf("https://assets.pikiran-rakyat.com/crop/0x155:1920x1235/x/photo/2021/08/01/658666320.jpg")
+                images = listOf("https://drive.google.com/uc?id=1m8wTWumrEFBQt8n2kTkbOQTkt1moay3e")
             ),
             Product(
                 id = 9,
                 name = "Kicau mas probiotik tetes 3 ml",
-                category = "TEST",
+                category = "Probiotik",
                 description = "Probiotik super untuk Pemicu bunyiburung, membuat burung tidak stress, membuat burung bersuara emas dan melengking tinggi, mengurangi macet bunyi, diformulasikan probiotik khusus burung dengan formulasi terbaik untuk burung. Komposisi : Bacillus subtilis, Lactobacillus, Saccharomyces, Aspergillus, Rhodopseudomonas, Actinomycetes, Nitrobacter.",
                 price = 45000,
                 stock = 55,
-                images = listOf("https://assets.pikiran-rakyat.com/crop/0x155:1920x1235/x/photo/2021/08/01/658666320.jpg")
+                images = listOf("https://drive.google.com/uc?id=1I-vA5-EpUUKgmLC1nDqJ418WjVcbPDJu")
             ),
             Product(
                 id = 10,
                 name = "HEMADEX 100 ml",
-                category = "TEST",
+                category = "Vitamin",
                 description = "HEMADEX merupakan produk yang mengandung zat besi dalam bentuk injeksi yang diperlukan untuk membentuk haemoglobin dan enzim. Untuk pengobatan terhadap anemia karena defisiensi zat besi yang diakibatkan oleh parasit, penyakit infeksi dan keadaan gizi yang tidak seimbang pada anak babi, sapi, kambing, domba, anjing dan kucing, membantu pertumbuhan dan pertambahan berat badan, dan meningkatkan daya tahan tubuh terhadap penyakit.",
                 price = 78800,
                 stock = 71,
-                images = listOf("https://assets.pikiran-rakyat.com/crop/0x155:1920x1235/x/photo/2021/08/01/658666320.jpg")
+                images = listOf("https://drive.google.com/uc?id=1qjTJIdqCShDD2KUls5I8WPelrwWUkSW8")
             )
         )
 
